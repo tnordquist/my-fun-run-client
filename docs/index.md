@@ -5,10 +5,18 @@
 _My Fun Run_ is an Android virtual themed race app. Allowing the user to track and save their
  routes while utilizing themed race mode options to simulate real life theme runs. This
  ultra-immersive running game will get any user motivated to get running and achieve their goals.
+ 
+ Users will be able to track and save their distance, time and pace. Users will be able to start 
+ and end their runs at any time. They will be able to choose from one of the available themes where 
+ audio and visuals will occur through their run to encourage and engage the user. Users can view
+ visuals and hear audio prompts during their runs. If a user does not want to utilize a theme they 
+ can opt for a timed run option. Stats from runs can be stored for viewing later.
 
 ## Design documentation
 
 * [Wireframe diagram](wireframe.md)
+
+* [Entity-relationship diagram](erd.md)
 
 ## User Stories
 
@@ -40,5 +48,22 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
     push notifications would send user alerts for motivation. Markers would be identified by 
     distance traveled.
     
-##
+## Device/external services
+
+This app will utilize a variety of devices and/or services to provide the best user experience 
+possible. Below is a list of such devices and/or services.
+
+* GPS/Location
+
+* Push Notifications
+
+* Playstore
+
+* Android login
+
+* Bluetooth
+
+* Accelerator
+
+* Timer/Clock
                  
