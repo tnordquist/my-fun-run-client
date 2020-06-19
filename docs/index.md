@@ -28,7 +28,7 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
 
 * New Runners
 
-    > As someone who is new to running I am looking for help staying motivated!
+    > I am new to running, and I am looking for help staying motivated, so I can reach my goals!
           
 * Bored Runners
     > I run regularly along my same route and would like something new and exciting without having 
