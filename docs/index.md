@@ -6,11 +6,12 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
  routes while utilizing themed race mode options to simulate real life theme runs. This
  ultra-immersive running game will get any user motivated to get running and achieve their goals.
  
- Users will be able to track and save their distance, time and pace. Users will be able to start 
+ Users will be able to track their distance, time and pace for each run. Users will be able to start 
  and end their runs at any time. They will be able to choose from one of the available themes where 
- audio and visuals will occur through their run to encourage and engage the user. Users can view
- visuals and hear audio prompts during their runs. If a user does not want to utilize a theme they 
- can opt for a timed run option. Stats from runs can be stored for viewing later.
+ audio and visuals will occur through their run to encourage and engage them while simulating the
+ experience of a live themed run. Users can view visuals and hear audio prompts during their runs as
+ a part of this experience. If a user does not want to utilize a theme they can opt for a simple 
+ timed run option. Stats from runs can be stored for viewing later.
 
 ## Design documentation
 
@@ -33,20 +34,6 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
     > I run regularly along my same route and would like something new and exciting without having 
                   >to go far from home.
 
-## Functionality
-
-* Tracks distance traveled, time, and pace
-
-* App stores above mentioned stats for each activity so user can track progress from run to run, 
-    daily, weekly, or monthly.
-
-* Developer will provide start, stop, and pause options
-
-* Developer will create race mode options, user can choose race type/theme
-
-* Developer will create pre-programmed alerts. As user approaches markers along the desired course,
-    push notifications would send user alerts for motivation. Markers would be identified by 
-    distance traveled.
     
 ## Devices and external services
 
@@ -82,7 +69,7 @@ possible. Below is a list of such devices and/or services.
     > This will be used to track the length of the user's run.
     >https://developer.android.com/guide/components/intents-common#CreateTimer
 
-*Audio Visuals
+* Audio Visuals
     >The app will use audio and UI visuals to provide the theme experience. These will be the 
     prompts users see and hear while using the app.
     >https://developer.android.com/guide/topics/media/mediarecorder
