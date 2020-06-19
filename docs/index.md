@@ -13,13 +13,13 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
  a part of this experience. If a user does not want to utilize a theme they can opt for a simple 
  timed run option. Stats from runs can be stored for viewing later.
 
-## Design documentation
+## Design Documentation
 
 * [Wireframe diagram](wireframe.md)
 
 * [Entity-relationship diagram](erd.md)
 
-## User Stories
+## Intended Users
 
 * Race Enthusiasts 
 
@@ -35,7 +35,7 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
                   to go far from home.
 
     
-## Devices and external services
+## Devices and External Services
 
 This app will utilize a variety of devices and/or services to provide the best user experience 
 possible. Below is a list of such devices and/or services.
