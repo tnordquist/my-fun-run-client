@@ -23,8 +23,8 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
 
 * Race Enthusiasts 
 
-    > As a ultra-runner who runs long hours, I want to be able to track my runs so that I can see 
-                       >my progress while training.
+    > As an ultra-runner who runs long hours, I want to be able to track my runs so that I can see 
+                       my progress while training.
 
 * New Runners
 
@@ -32,7 +32,7 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
           
 * Bored Runners
     > I run regularly along my same route and would like something new and exciting without having 
-                  >to go far from home.
+                  to go far from home.
 
     
 ## Devices and external services
