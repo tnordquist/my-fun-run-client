@@ -48,22 +48,42 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
     push notifications would send user alerts for motivation. Markers would be identified by 
     distance traveled.
     
-## Device/external services
+## Devices and external services
 
 This app will utilize a variety of devices and/or services to provide the best user experience 
 possible. Below is a list of such devices and/or services.
 
-* GPS/Location
+* GPS
+    >This will allow users to track their distance while running.
+    >https://developer.android.com/training/articles/wear-location-detection
 
 * Push Notifications
+    >This will allow users to stay motivated by receiving notification reminders.
+    >https://developer.android.com/guide/topics/ui/notifiers/notifications
 
-* Playstore
+* Google Play Store
+    > By publishing this app more people will be able to see it.
+    >https://developer.android.com/distribute/google-play
+    https://developer.android.com/distribute/best-practices/launch/launch-checklist
 
-* Android login
+* Google login
+    > This allows users an easy login process.
+    >https://developers.google.com/android/guides/http-auth
 
 * Bluetooth
+    > This will allow the user the ability to connect for a hands free experience.
+    >https://developer.android.com/guide/topics/connectivity/bluetooth
 
 * Accelerator
+    > This will help the app gather user run stats.
+    >https://developer.android.com/guide/topics/sensors/sensors_motion
 
 * Timer/Clock
+    > This will be used to track the length of the user's run.
+    >https://developer.android.com/guide/components/intents-common#CreateTimer
+
+*Audio Visuals
+    >The app will use audio and UI visuals to provide the theme experience. These will be the 
+    prompts users see and hear while using the app.
+    >https://developer.android.com/guide/topics/media/mediarecorder
                  
