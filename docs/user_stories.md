@@ -1,14 +1,15 @@
 ## User-stories
 
-* Race Enthusists 
+* Race Enthusiasts 
 
-    > As an ultra-runner who runs long hours, I want to be able to track my runs so that I can see 
-                      >my progress while training.
+    > As an ultra-runner, I run long hours preparing for each race, I would really benefit from 
+                      >being able to track each run and view stats later for progress.
 
-* New Runners.
+* Unmotivated Runners.
 
-    > As someone who is new to running I am looking for help staying motivated!
+    > As runner that lacks motivation, I would love to have an app that provides encouragement and
+                          > motivation along my runs to keep me going!
    
-* Bored Runners
+* Runners in a Rut
     > I run regularly along my same route and would like something new and exciting without having 
                   >to go far from home.
