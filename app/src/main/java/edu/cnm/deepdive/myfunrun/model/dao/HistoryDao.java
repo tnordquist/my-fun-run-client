@@ -9,7 +9,6 @@ import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
 import edu.cnm.deepdive.myfunrun.model.entity.History;
-import edu.cnm.deepdive.myfunrun.model.pojo.HistoryWithQuotes;
 import edu.cnm.deepdive.myfunrun.model.pojo.HistoryWithRace;
 import io.reactivex.Single;
 import java.util.Collection;
@@ -33,12 +32,12 @@ public interface HistoryDao {
   @Delete
   Single<Integer> delete(History... histories);
 
-  @Query("SELECT * FROM History ORDER BY ")
+  @Query("SELECT * FROM History ORDER BY distance")
   LiveData<List<History>> selectAll();
 
-  @Transaction
-  @Query("SELECT * FROM History ORDER BY name")
-  LiveData<List<HistoryWithRace>> selectAll();
+ // @Transaction
+ // @Query("SELECT * FROM History ORDER BY ")
+ // LiveData<List<History>> selectById;
 
   @Transaction
   @Query("SELECT * FROM History WHERE History_id = :HistoryId")

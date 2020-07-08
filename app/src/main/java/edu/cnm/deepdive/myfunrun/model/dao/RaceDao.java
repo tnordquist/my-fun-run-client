@@ -10,7 +10,8 @@ import androidx.room.Transaction;
 import androidx.room.Update;
 import edu.cnm.deepdive.myfunrun.model.entity.History;
 import edu.cnm.deepdive.myfunrun.model.entity.Race;
-import edu.cnm.deepdive.myfunrun.model.pojo.RaceWithQuotes;
+import edu.cnm.deepdive.myfunrun.model.pojo.HistoryWithRace;
+import edu.cnm.deepdive.myfunrun.model.pojo.RaceWithHistory;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
@@ -27,22 +28,23 @@ public interface RaceDao {
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<List<Long>> insert(Collection<Race> Races);
 
-  @Race
+  @Insert
   Single<Integer> Race(Race... Races);
 
   @Delete
   Single<Integer> delete(Race... Races);
 
-  @Query("SELECT * FROM Race ORDER BY name")
+  @Query("SELECT * FROM Race ORDER BY race_id")
   LiveData<List<Race>> selectAll();
 
-  @Transaction
-  @Query("SELECT * FROM Race ORDER BY name")
-  LiveData<List<Race>> selectAll();
+  // TODO Debug
+ // @Transaction
+ // @Query("SELECT * FROM Race ORDER BY race_id")
+ // LiveData<Race> selectById(long RaceId)
 
-  @Transaction
-  @Query("SELECT * FROM Race WHERE Race_id = :RaceId")
-  LiveData<Race> selectById(long RaceId);
+ // @Transaction
+  //@Query("SELECT * FROM History WHERE Race_id = :RaceId")
+  //LiveData<HistoryWithRace> selectById(long Race);
 
   Race update(History history);
 }

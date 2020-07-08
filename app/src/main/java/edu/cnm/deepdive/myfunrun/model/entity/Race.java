@@ -18,4 +18,20 @@ public class Race {
 
   @ColumnInfo(name = "race_id")
   private String raceName;
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public String getRaceName() {
+    return raceName;
+  }
+
+  public void setRaceName(String raceName) {
+    this.raceName = raceName;
+  }
 }

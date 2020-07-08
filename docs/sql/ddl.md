@@ -1,17 +1,17 @@
-CREATE TABLE IF NOT EXISTS `Source`
+CREATE TABLE IF NOT EXISTS `History`
 (
-    `source_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    `history_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     `name`      TEXT COLLATE NOCASE
 );
 
-CREATE UNIQUE INDEX IF NOT EXISTS `index_Source_name` ON `Source` (`name`);
+CREATE UNIQUE INDEX IF NOT EXISTS `index_History_name` ON `History` (`name`);
 
 CREATE TABLE IF NOT EXISTS `${TABLE_NAME}`
 (
     `user_id`  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     `history_id` INTEGER,
-    `text`      TEXT COLLATE NOCASE,
-    FOREIGN KEY (`source_id`) REFERENCES `Source` (`source_id`) ON UPDATE NO ACTION ON DELETE SET NULL
+    `race_id`  INTEGER, 
+    FOREIGN KEY (`user_id`) REFERENCES `History` (`race_id`) ON UPDATE NO ACTION ON DELETE SET NULL
 );
 
-CREATE INDEX IF NOT EXISTS `index_Quote_source_id` ON `${TABLE_NAME}` (`source_id`);
+CREATE INDEX IF NOT EXISTS `index_MyFunRun_history_id` ON `${TABLE_NAME}` (`history_id`);
