@@ -15,29 +15,29 @@ import java.util.Collection;
 import java.util.List;
 
 @Dao
-public interface HistoryDao {
+public interface UserDao {
 
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<Long> insert(History History);
 
   @Insert(onConflict = OnConflictStrategy.IGNORE)
-  Single<List<Long>> insert(History... Historys);
+  Single<List<Long>> insert(History... histories);
 
   @Insert(onConflict = OnConflictStrategy.IGNORE)
-  Single<List<Long>> insert(Collection<History> Historys);
+  Single<List<Long>> insert(Collection<History> histories);
 
   @Update
-  Single<Integer> update(History... Historys);
+  Single<Integer> update(History... histories);
 
   @Delete
-  Single<Integer> delete(History... Historys);
+  Single<Integer> delete(History... histories);
 
   @Query("SELECT * FROM History ORDER BY name")
   LiveData<List<History>> selectAll();
 
   @Transaction
   @Query("SELECT * FROM History ORDER BY name")
-  LiveData<List<HistoryWithQuotes>> selectAllWithQuotes();
+  LiveData<List<HistoryWithQuotes>> selectAll();
 
   @Transaction
   @Query("SELECT * FROM History WHERE History_id = :HistoryId")

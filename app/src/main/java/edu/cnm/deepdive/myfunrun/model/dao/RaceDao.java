@@ -8,6 +8,7 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
+import edu.cnm.deepdive.myfunrun.model.entity.History;
 import edu.cnm.deepdive.myfunrun.model.entity.Race;
 import edu.cnm.deepdive.myfunrun.model.pojo.RaceWithQuotes;
 import io.reactivex.Single;
@@ -37,10 +38,11 @@ public interface RaceDao {
 
   @Transaction
   @Query("SELECT * FROM Race ORDER BY name")
-  LiveData<List<RaceWithQuotes>> selectAllWithQuotes();
+  LiveData<List<Race>> selectAll();
 
   @Transaction
   @Query("SELECT * FROM Race WHERE Race_id = :RaceId")
-  LiveData<RaceWithQuotes> selectById(long RaceId);
+  LiveData<Race> selectById(long RaceId);
 
+  Race update(History history);
 }

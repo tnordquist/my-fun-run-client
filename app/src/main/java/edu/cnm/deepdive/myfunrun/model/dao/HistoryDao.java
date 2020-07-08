@@ -10,6 +10,7 @@ import androidx.room.Transaction;
 import androidx.room.Update;
 import edu.cnm.deepdive.myfunrun.model.entity.History;
 import edu.cnm.deepdive.myfunrun.model.pojo.HistoryWithQuotes;
+import edu.cnm.deepdive.myfunrun.model.pojo.HistoryWithRace;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
@@ -18,29 +19,29 @@ import java.util.List;
 public interface HistoryDao {
 
   @Insert(onConflict = OnConflictStrategy.IGNORE)
-  Single<Long> insert(History History);
+  Single<Long> insert(History history);
 
   @Insert(onConflict = OnConflictStrategy.IGNORE)
-  Single<List<Long>> insert(History... Historys);
+  Single<List<Long>> insert(History... histories);
 
   @Insert(onConflict = OnConflictStrategy.IGNORE)
-  Single<List<Long>> insert(Collection<History> Historys);
+  Single<List<Long>> insert(Collection<History> histories);
 
   @Update
-  Single<Integer> update(History... Historys);
+  Single<Integer> update(History... histories);
 
   @Delete
-  Single<Integer> delete(History... Historys);
+  Single<Integer> delete(History... histories);
 
-  @Query("SELECT * FROM History ORDER BY name")
+  @Query("SELECT * FROM History ORDER BY ")
   LiveData<List<History>> selectAll();
 
   @Transaction
   @Query("SELECT * FROM History ORDER BY name")
-  LiveData<List<HistoryWithQuotes>> selectAllWithQuotes();
+  LiveData<List<HistoryWithRace>> selectAll();
 
   @Transaction
   @Query("SELECT * FROM History WHERE History_id = :HistoryId")
-  LiveData<HistoryWithQuotes> selectById(long HistoryId);
+  LiveData<HistoryWithRace> selectById(long HistoryId);
 
 }

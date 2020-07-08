@@ -1,6 +1,7 @@
 package edu.cnm.deepdive.myfunrun.model.entity;
 
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Index;
@@ -14,4 +15,7 @@ public class Race {
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "race_id")
   private long id;
+
+  @ColumnInfo(name = "race_id")
+  private String raceName;
 }
