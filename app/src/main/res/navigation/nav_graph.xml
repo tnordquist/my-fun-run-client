@@ -15,18 +15,43 @@
       android:id="@+id/action_FirstFragment_to_SecondFragment"
       app:destination="@id/SecondFragment"/>
   </fragment>
+
   <fragment
     android:id="@+id/SecondFragment"
     android:label="@string/second_fragment_label"
     android:name="edu.cnm.deepdive.myfunrun.controller.SecondFragment"
     tools:layout="@layout/fragment_second">
-
+    <action
+      android:id="@+id/action_SecondFragment_to_thirdFragment"
+      app:destination="@id/thirdFragment"/>
     <action
       android:id="@+id/action_SecondFragment_to_FirstFragment"
       app:destination="@id/FirstFragment"/>
-
-    <argument
-      android:name="myArg"
-      app:argType="string"/>
   </fragment>
+  <fragment
+    android:id="@+id/thirdFragment"
+    android:name="edu.cnm.deepdive.myfunrun.ThirdFragment"
+    android:label="fragment_third"
+    tools:layout="@layout/fragment_third">
+    <action
+      android:id="@+id/action_thirdFragment_to_fourthFragment"
+      app:destination="@id/fourthFragment"/>
+    <action
+      android:id="@+id/action_thirdFragment_to_SecondFragment"
+      app:destination="@id/SecondFragment"/>
+  </fragment>
+  <fragment
+    android:id="@+id/fourthFragment"
+    android:name="edu.cnm.deepdive.myfunrun.FourthFragment"
+    android:label="fragment_fourth"
+    tools:layout="@layout/fragment_fourth">
+    <action
+      android:id="@+id/action_fourthFragment_to_thirdFragment"
+      app:destination="@id/thirdFragment"/>
+    <action
+      android:id="@+id/action_fourthFragment_to_FirstFragment"
+      app:destination="@id/FirstFragment"/>
+  </fragment>
+
+
 </navigation>

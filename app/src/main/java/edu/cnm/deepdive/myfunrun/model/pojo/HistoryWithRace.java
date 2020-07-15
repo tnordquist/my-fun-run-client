@@ -3,19 +3,20 @@ package edu.cnm.deepdive.myfunrun.model.pojo;
 import androidx.annotation.NonNull;
 import androidx.room.Relation;
 import edu.cnm.deepdive.myfunrun.model.entity.History;
+import edu.cnm.deepdive.myfunrun.model.entity.Race;
 
 public class HistoryWithRace extends History {
 
 
-  @Relation(entity = History.class, entityColumn = "history_id", parentColumn = "history_id")
-  private History history;
+  @Relation(entity = Race.class, entityColumn = "race_id", parentColumn = "race_id")
+  private Race race;
 
-  public History getHistory() {
-    return history;
+  public Race getRace() {
+    return race;
   }
 
-  public void setHistory(History history) {
-    this.history = history;
+  public void setRace(Race race) {
+    this.race = race;
   }
 
 

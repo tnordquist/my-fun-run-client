@@ -6,14 +6,14 @@ import edu.cnm.deepdive.myfunrun.model.entity.Race;
 
 public class RaceWithHistory extends Race {
 
-  @Relation(entity = Race.class, entityColumn = "race_id", parentColumn = "race_id")
-  private Race race;
+  @Relation(entity = History.class, entityColumn = "history_id", parentColumn = "history_id")
+  private History history;
 
-  public Race getRace() {
-    return race;
+  public History getHistory() {
+    return history;
   }
 
-  public void setHistory(Race race) {
-    this.race = race;
+  public void setHistory(History history) {
+    this.history = history;
   }
 }

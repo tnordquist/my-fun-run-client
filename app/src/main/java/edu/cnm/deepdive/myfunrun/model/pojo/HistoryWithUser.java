@@ -2,18 +2,19 @@ package edu.cnm.deepdive.myfunrun.model.pojo;
 
 import androidx.room.Relation;
 import edu.cnm.deepdive.myfunrun.model.entity.History;
+import edu.cnm.deepdive.myfunrun.model.entity.User;
 
 public class HistoryWithUser extends History {
 
-  @Relation(entity = History.class, entityColumn = "history_id", parentColumn = "history_id")
-  private History history;
+  @Relation(entity = User.class, entityColumn = "user_id", parentColumn = "user_id")
+  private User user;
 
-  public History getHistory() {
-    return history;
+  public User getUser() {
+    return user;
   }
 
-  public void setHistory(History history) {
-    this.history = history;
+  public void setUser(User user) {
+    this.user = user;
   }
 
 }
