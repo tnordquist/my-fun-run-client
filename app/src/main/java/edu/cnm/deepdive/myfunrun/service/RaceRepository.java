@@ -7,7 +7,7 @@ import edu.cnm.deepdive.myfunrun.model.dao.RaceDao;
 import edu.cnm.deepdive.myfunrun.model.entity.Race;
 import java.util.List;
 
-public class RaceRepository {
+public interface RaceRepository {
 
 
   private final Context context;

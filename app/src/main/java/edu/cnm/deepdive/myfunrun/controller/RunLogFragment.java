@@ -1,18 +1,17 @@
-package edu.cnm.deepdive.myfunrun;
+package edu.cnm.deepdive.myfunrun.controller;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import edu.cnm.deepdive.myfunrun.R;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class FourthFragment extends Fragment {
 
-  public FourthFragment() {
+public class RunLogFragment extends Fragment {
+
+  public RunLogFragment() {
     // Required empty public constructor
   }
 

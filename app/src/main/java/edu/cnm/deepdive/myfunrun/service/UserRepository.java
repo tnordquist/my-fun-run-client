@@ -6,7 +6,7 @@ import edu.cnm.deepdive.myfunrun.model.dao.UserDao;
 import edu.cnm.deepdive.myfunrun.model.entity.User;
 import java.util.List;
 
-public class UserRepository {
+public interface UserRepository {
 
   private final Context context;
   private final MyFunRunDatabase database;

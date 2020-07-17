@@ -14,7 +14,7 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.Collection;
 import java.util.List;
 
-public class HistoryRepository {
+public interface HistoryRepository {
 
   private final Context context;
   private final MyFunRunDatabase database;

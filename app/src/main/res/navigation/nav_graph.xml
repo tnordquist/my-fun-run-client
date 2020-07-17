@@ -8,7 +8,7 @@
   <fragment
     android:id="@+id/FirstFragment"
     android:label="@string/first_fragment_label"
-    android:name="edu.cnm.deepdive.myfunrun.controller.FirstFragment"
+    android:name="edu.cnm.deepdive.myfunrun.controller.HomeFragment"
     tools:layout="@layout/fragment_first">
 
     <action
@@ -19,7 +19,7 @@
   <fragment
     android:id="@+id/SecondFragment"
     android:label="@string/second_fragment_label"
-    android:name="edu.cnm.deepdive.myfunrun.controller.SecondFragment"
+    android:name="edu.cnm.deepdive.myfunrun.controller.CourseSelectionFragment"
     tools:layout="@layout/fragment_second">
     <action
       android:id="@+id/action_SecondFragment_to_thirdFragment"
@@ -30,7 +30,7 @@
   </fragment>
   <fragment
     android:id="@+id/thirdFragment"
-    android:name="edu.cnm.deepdive.myfunrun.ThirdFragment"
+    android:name="edu.cnm.deepdive.myfunrun.controller.RunTrackingFragment"
     android:label="fragment_third"
     tools:layout="@layout/fragment_third">
     <action
@@ -42,7 +42,7 @@
   </fragment>
   <fragment
     android:id="@+id/fourthFragment"
-    android:name="edu.cnm.deepdive.myfunrun.FourthFragment"
+    android:name="edu.cnm.deepdive.myfunrun.controller.RunLogFragment"
     android:label="fragment_fourth"
     tools:layout="@layout/fragment_fourth">
     <action
