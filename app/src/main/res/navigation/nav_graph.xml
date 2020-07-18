@@ -3,30 +3,30 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/nav_graph"
-  app:startDestination="@id/FirstFragment">
+  app:startDestination="@id/course_fragment">
 
   <fragment
-    android:id="@+id/FirstFragment"
-    android:label="@string/first_fragment_label"
-    android:name="edu.cnm.deepdive.myfunrun.controller.HomeFragment"
-    tools:layout="@layout/fragment_first">
+    android:id="@+id/course_fragment"
+    android:label="@string/course_fragment_label"
+    android:name="edu.cnm.deepdive.myfunrun.controller.CourseFragment"
+    tools:layout="@layout/fragment_course">
 
     <action
-      android:id="@+id/action_FirstFragment_to_SecondFragment"
-      app:destination="@id/SecondFragment"/>
+      android:id="@+id/action_course_fragment_to_history_fragment"
+      app:destination="@id/history_fragment"/>
   </fragment>
 
   <fragment
-    android:id="@+id/SecondFragment"
-    android:label="@string/second_fragment_label"
-    android:name="edu.cnm.deepdive.myfunrun.controller.CourseSelectionFragment"
-    tools:layout="@layout/fragment_second">
+    android:id="@+id/history_fragment"
+    android:label="@string/history_fragment_label"
+    android:name="edu.cnm.deepdive.myfunrun.controller.HistoryFragment"
+    tools:layout="@layout/fragment_history">
     <action
       android:id="@+id/action_SecondFragment_to_thirdFragment"
       app:destination="@id/thirdFragment"/>
     <action
       android:id="@+id/action_SecondFragment_to_FirstFragment"
-      app:destination="@id/FirstFragment"/>
+      app:destination="@id/course_fragment"/>
   </fragment>
   <fragment
     android:id="@+id/thirdFragment"
@@ -38,7 +38,7 @@
       app:destination="@id/fourthFragment"/>
     <action
       android:id="@+id/action_thirdFragment_to_SecondFragment"
-      app:destination="@id/SecondFragment"/>
+      app:destination="@id/history_fragment"/>
   </fragment>
   <fragment
     android:id="@+id/fourthFragment"
@@ -50,7 +50,7 @@
       app:destination="@id/thirdFragment"/>
     <action
       android:id="@+id/action_fourthFragment_to_FirstFragment"
-      app:destination="@id/FirstFragment"/>
+      app:destination="@id/course_fragment"/>
   </fragment>
 
 

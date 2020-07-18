@@ -21,6 +21,7 @@
 
   </com.google.android.material.appbar.AppBarLayout>
 
+<!--   TODO move to fragments -->
   <com.google.android.material.floatingactionbutton.FloatingActionButton
     android:id="@+id/fab"
     android:layout_width="wrap_content"

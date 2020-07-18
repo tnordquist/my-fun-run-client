@@ -1,14 +1,13 @@
 package edu.cnm.deepdive.myfunrun.model.entity;
 
 
-import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(
-    indices = @Index(value = "race_name", unique = true)
+    indices = @Index(value = "name", unique = true)
 )
 public class Race {
 
@@ -16,8 +15,7 @@ public class Race {
   @ColumnInfo(name = "race_id")
   private long id;
 
-  @ColumnInfo(name = "race_id")
-  private String raceName;
+  private String name;
 
   public long getId() {
     return id;
@@ -27,11 +25,11 @@ public class Race {
     this.id = id;
   }
 
-  public String getRaceName() {
-    return raceName;
+  public String getName() {
+    return name;
   }
 
-  public void setRaceName(String raceName) {
-    this.raceName = raceName;
+  public void setName(String name) {
+    this.name = name;
   }
 }

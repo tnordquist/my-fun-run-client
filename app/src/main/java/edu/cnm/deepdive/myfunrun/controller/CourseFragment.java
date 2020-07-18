@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import edu.cnm.deepdive.myfunrun.R;
 
-public class HomeFragment extends Fragment {
+public class CourseFragment extends Fragment {
 
   @Override
   public View onCreateView(
@@ -18,7 +18,13 @@ public class HomeFragment extends Fragment {
       Bundle savedInstanceState
   ) {
     // Inflate the layout for this fragment
-    return inflater.inflate(R.layout.fragment_first, container, false);
+   View root = inflater.inflate(R.layout.fragment_course, container, false);
+   root.findViewById(R.id.navigate_to_history).setOnClickListener((v) -> {
+     NavHostFragment.findNavController(this)
+         .navigate(R.id.action_course_fragment_to_history_fragment);
+
+   });
+    return root;
   }
 
   public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {

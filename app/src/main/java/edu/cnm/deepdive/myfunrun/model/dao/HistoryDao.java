@@ -7,9 +7,10 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Transaction;
+import androidx.room.TypeConverters;
 import androidx.room.Update;
 import edu.cnm.deepdive.myfunrun.model.entity.History;
-import edu.cnm.deepdive.myfunrun.model.pojo.HistoryWithRace;
+import edu.cnm.deepdive.myfunrun.model.pojo.HistoryWithDetails;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
@@ -40,7 +41,9 @@ public interface HistoryDao {
  // LiveData<List<History>> selectById;
 
   @Transaction
-  @Query("SELECT * FROM History WHERE History_id = :HistoryId")
-  LiveData<HistoryWithRace> selectById(long HistoryId);
+  @Query("SELECT * FROM History WHERE History_id = :historyId")
+  Single<HistoryWithDetails> selectById(long historyId);
+
+
 
 }

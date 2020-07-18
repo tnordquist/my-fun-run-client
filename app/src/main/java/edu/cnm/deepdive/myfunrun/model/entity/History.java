@@ -15,14 +15,14 @@ import javax.annotation.Nonnull;
     foreignKeys = {
         @ForeignKey(
             entity = Race.class,
-            parentColumns = "history_id",
+            parentColumns = "race_id",
             childColumns = "race_id",
             onDelete = ForeignKey.SET_NULL),
         @ForeignKey(
             entity = User.class,
-            parentColumns = "history_id",
+            parentColumns = "user_id",
             childColumns = "user_id",
-            onDelete = ForeignKey.SET_NULL)
+            onDelete = ForeignKey.CASCADE)
     } )
 
 public class History {
@@ -30,6 +30,12 @@ public class History {
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "history_id")
   private long id;
+
+@ColumnInfo(name = "user_id", index = true)
+  private long userId;
+
+@ColumnInfo(name = "race_id", index = true)
+private Long raceId;
 
   @ColumnInfo(name = "distance", index = true)
   private int distance;
@@ -46,6 +52,22 @@ public class History {
 
   public void setId(long id) {
     this.id = id;
+  }
+
+  public long getUserId() {
+    return userId;
+  }
+
+  public void setUserId(long userId) {
+    this.userId = userId;
+  }
+
+  public Long getRaceId() {
+    return raceId;
+  }
+
+  public void setRaceId(Long raceId) {
+    this.raceId = raceId;
   }
 
   public int getDistance() {

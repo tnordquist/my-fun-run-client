@@ -13,7 +13,7 @@ import edu.cnm.deepdive.myfunrun.model.entity.History;
 import edu.cnm.deepdive.myfunrun.model.entity.Race;
 import edu.cnm.deepdive.myfunrun.model.entity.User;
 import edu.cnm.deepdive.myfunrun.service.MyFunRunDatabase.Converters;
-import java.sql.Date;
+import java.util.Date;
 
 @Database(
     entities = {Race.class, User.class, History.class},

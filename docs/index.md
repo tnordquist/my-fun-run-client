@@ -74,3 +74,10 @@ possible. Below is a list of such devices and/or services.
     prompts users see and hear while using the app.
     >https://developer.android.com/guide/topics/media/mediarecorder
                  
+## Implementation 
+
+* [Entity Classes](https://github.com/christie274/my-fun-run/tree/master/app/src/main/java/edu/cnm/deepdive/myfunrun/model/entity)
+
+* ... (links to Dao,repositories,database)
+
+* [Data Definition Language](ddl.md)

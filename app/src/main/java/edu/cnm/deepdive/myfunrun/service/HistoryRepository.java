@@ -6,13 +6,10 @@ import edu.cnm.deepdive.myfunrun.model.dao.HistoryDao;
 import edu.cnm.deepdive.myfunrun.model.dao.RaceDao;
 import edu.cnm.deepdive.myfunrun.model.dao.UserDao;
 import edu.cnm.deepdive.myfunrun.model.entity.History;
-import edu.cnm.deepdive.myfunrun.model.entity.Race;
-import edu.cnm.deepdive.myfunrun.model.pojo.HistoryWithRace;
-import edu.cnm.deepdive.myfunrun.model.pojo.HistoryWithUser;
+import edu.cnm.deepdive.myfunrun.model.pojo.HistoryWithDetails;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
-import java.util.Collection;
 import java.util.List;
 
 public class HistoryRepository {
@@ -23,11 +20,10 @@ public class HistoryRepository {
   private final UserDao userDao;
   private final RaceDao raceDao;
 
-  public HistoryRepository(Context context, UserDao userDao) {
+  public HistoryRepository(Context context) {
     this.context = context;
-    this.userDao = userDao;
-    this.historyDao = historyDao;
     database = MyFunRunDatabase.getInstance();
+    userDao = database.getUserDao();
     historyDao = database.getHistoryDao();
     raceDao = database.getRaceDao();
   }
@@ -36,7 +32,7 @@ public class HistoryRepository {
     return historyDao.selectAll();
   }
 
-  public Single<HistoryWithUser> get(long id) {
+  public Single<HistoryWithDetails> get(long id) {
     return historyDao.selectById(id)
         .subscribeOn(Schedulers.io());
   }

@@ -11,6 +11,7 @@ import androidx.room.Update;
 import edu.cnm.deepdive.myfunrun.model.entity.History;
 import edu.cnm.deepdive.myfunrun.model.entity.History;
 import edu.cnm.deepdive.myfunrun.model.entity.User;
+import edu.cnm.deepdive.myfunrun.model.pojo.UserWithHistory;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
@@ -19,29 +20,26 @@ import java.util.List;
 public interface UserDao {
 
   @Insert(onConflict = OnConflictStrategy.IGNORE)
-  Single<Long> insert(History History);
+  Single<Long> insert(User user);
 
   @Insert(onConflict = OnConflictStrategy.IGNORE)
-  Single<List<Long>> insert(History... histories);
+  Single<List<Long>> insert(User... users);
 
   @Insert(onConflict = OnConflictStrategy.IGNORE)
-  Single<List<Long>> insert(Collection<History> histories);
+  Single<List<Long>> insert(Collection<User> users);
 
   @Update
-  Single<Integer> update(History... histories);
+  Single<Integer> update(User... users);
 
   @Delete
-  Single<Integer> delete(History... histories);
-// TODO correct errors
- // @Query("SELECT * FROM History ORDER BY name")
- // LiveData<List<History>> selectAll();
+  Single<Integer> delete(User... users);
 
- // @Transaction
-  //@Query("SELECT * FROM History ORDER BY name")
-  //LiveData<List<User>> selectAll();
+ @Transaction
+ @Query("SELECT * FROM User ORDER BY display_name")
+  LiveData<List<User>> selectAll();
 
   @Transaction
-  @Query("SELECT * FROM History WHERE History_id = :HistoryId")
-  LiveData<User> selectById(long HistoryId);
+  @Query("SELECT * FROM User WHERE user_id = :userId")
+  Single<UserWithHistory> selectById(long userId);
 
 }
