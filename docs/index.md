@@ -48,21 +48,14 @@ possible. Below is a list of such devices and/or services.
     >This will allow users to stay motivated by receiving notification reminders.
     >https://developer.android.com/guide/topics/ui/notifiers/notifications
 
-* Google Play Store
-    > By publishing this app more people will be able to see it.
-    >https://developer.android.com/distribute/google-play
-    https://developer.android.com/distribute/best-practices/launch/launch-checklist
-
 * Google login
     > This allows users an easy login process.
     >https://developers.google.com/android/guides/http-auth
 
-* Bluetooth
-    > This will allow the user the ability to connect for a hands free experience.
-    >https://developer.android.com/guide/topics/connectivity/bluetooth
-
-* Accelerator
-    > This will help the app gather user run stats.
+* Accelerometer
+    > This platform provides several sensors that let you monitor the motion of a device relative to
+                  > the actions of the user. When the user begins running the accelerometer measures
+                  > the increase in motion and will be used to capture the cadence of the user.
     >https://developer.android.com/guide/topics/sensors/sensors_motion
 
 * Timer/Clock
@@ -78,6 +71,12 @@ possible. Below is a list of such devices and/or services.
 
 * [Entity Classes](https://github.com/christie274/my-fun-run/tree/master/app/src/main/java/edu/cnm/deepdive/myfunrun/model/entity)
 
-* ... (links to Dao,repositories,database)
+* [Dao Interfaces](https://github.com/christie274/my-fun-run/tree/master/app/src/main/java/edu/cnm/deepdive/myfunrun/model/dao)
+
+* [Repositories and Database](https://github.com/christie274/my-fun-run/tree/master/app/src/main/java/edu/cnm/deepdive/myfunrun/service)
+
+* [Fragments](https://github.com/christie274/my-fun-run/tree/master/app/src/main/java/edu/cnm/deepdive/myfunrun/controller)
+
+* [Pojo Classes](https://github.com/christie274/my-fun-run/tree/master/app/src/main/java/edu/cnm/deepdive/myfunrun/model/pojo)
 
 * [Data Definition Language](ddl.md)
