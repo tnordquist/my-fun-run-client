@@ -39,7 +39,7 @@ public interface RaceDao {
 
   // TODO Debug
  // @Transaction
- // @Query("SELECT * FROM Race ORDER BY race_id")
+  //@Query("SELECT * FROM Race ORDER BY race_id")
  // LiveData<Race> selectById(long RaceId)
 
  // @Transaction
