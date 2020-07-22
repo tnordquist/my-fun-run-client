@@ -9,9 +9,9 @@ import edu.cnm.deepdive.myfunrun.R;
 
 
 
-public class RunLogFragment extends Fragment {
+public class CourseSelectionFragment extends Fragment {
 
-  public RunLogFragment() {
+  public CourseSelectionFragment() {
     // Required empty public constructor
   }
 

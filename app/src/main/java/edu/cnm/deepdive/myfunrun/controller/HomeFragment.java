@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import edu.cnm.deepdive.myfunrun.R;
 
-public class CourseFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
   @Override
   public View onCreateView(

@@ -8,7 +8,7 @@
   <fragment
     android:id="@+id/course_fragment"
     android:label="@string/course_fragment_label"
-    android:name="edu.cnm.deepdive.myfunrun.controller.CourseFragment"
+    android:name="edu.cnm.deepdive.myfunrun.controller.HomeFragment"
     tools:layout="@layout/fragment_course">
 
     <action
@@ -42,7 +42,7 @@
   </fragment>
   <fragment
     android:id="@+id/fourthFragment"
-    android:name="edu.cnm.deepdive.myfunrun.controller.RunLogFragment"
+    android:name="edu.cnm.deepdive.myfunrun.controller.CourseSelectionFragment"
     android:label="fragment_fourth"
     tools:layout="@layout/fragment_fourth">
     <action
