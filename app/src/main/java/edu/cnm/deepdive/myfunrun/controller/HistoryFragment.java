@@ -33,7 +33,7 @@ public class HistoryFragment extends Fragment {
       @Override
       public void onClick(View view) {
         NavHostFragment.findNavController(HistoryFragment.this)
-            .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+            .navigate(R.id.action_history_fragment_to_course_selection_fragment);
       }
     });
   }

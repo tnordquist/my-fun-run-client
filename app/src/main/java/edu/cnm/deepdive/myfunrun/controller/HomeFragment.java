@@ -21,7 +21,7 @@ public class HomeFragment extends Fragment {
    View root = inflater.inflate(R.layout.fragment_home, container, false);
    root.findViewById(R.id.navigate_to_history).setOnClickListener((v) -> {
      NavHostFragment.findNavController(this)
-         .navigate(R.id.action_course_fragment_to_history_fragment);
+         .navigate(R.id.action_home_fragment_to_history_fragment);
 
    });
     return root;

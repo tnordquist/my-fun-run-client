@@ -7,7 +7,7 @@
 //import androidx.lifecycle.MutableLiveData;
 //
 //public class GoogleSignInServices {
-//// Need to review Quotes for additional code. Quotes has errors, fix beofre proceeding
+//// Need to review Quotes for additional code. Quotes has errors, fix before proceeding
 //
 //  private static Application context;
 //
