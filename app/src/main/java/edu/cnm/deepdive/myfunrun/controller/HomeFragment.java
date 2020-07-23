@@ -18,7 +18,7 @@ public class HomeFragment extends Fragment {
       Bundle savedInstanceState
   ) {
     // Inflate the layout for this fragment
-   View root = inflater.inflate(R.layout.fragment_course, container, false);
+   View root = inflater.inflate(R.layout.fragment_home, container, false);
    root.findViewById(R.id.navigate_to_history).setOnClickListener((v) -> {
      NavHostFragment.findNavController(this)
          .navigate(R.id.action_course_fragment_to_history_fragment);

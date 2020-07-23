@@ -9,49 +9,23 @@
     android:id="@+id/course_fragment"
     android:label="@string/course_fragment_label"
     android:name="edu.cnm.deepdive.myfunrun.controller.HomeFragment"
-    tools:layout="@layout/fragment_course">
-
-    <action
-      android:id="@+id/action_course_fragment_to_history_fragment"
-      app:destination="@id/history_fragment"/>
-  </fragment>
+    tools:layout="@layout/fragment_home"/>
 
   <fragment
     android:id="@+id/history_fragment"
     android:label="@string/history_fragment_label"
     android:name="edu.cnm.deepdive.myfunrun.controller.HistoryFragment"
-    tools:layout="@layout/fragment_history">
-    <action
-      android:id="@+id/action_SecondFragment_to_thirdFragment"
-      app:destination="@id/thirdFragment"/>
-    <action
-      android:id="@+id/action_SecondFragment_to_FirstFragment"
-      app:destination="@id/course_fragment"/>
-  </fragment>
+    tools:layout="@layout/fragment_history"/>
   <fragment
     android:id="@+id/thirdFragment"
     android:name="edu.cnm.deepdive.myfunrun.controller.RunTrackingFragment"
     android:label="fragment_third"
-    tools:layout="@layout/fragment_third">
-    <action
-      android:id="@+id/action_thirdFragment_to_fourthFragment"
-      app:destination="@id/fourthFragment"/>
-    <action
-      android:id="@+id/action_thirdFragment_to_SecondFragment"
-      app:destination="@id/history_fragment"/>
-  </fragment>
+    tools:layout="@layout/fragment_run_tracking"/>
   <fragment
     android:id="@+id/fourthFragment"
     android:name="edu.cnm.deepdive.myfunrun.controller.CourseSelectionFragment"
     android:label="fragment_fourth"
-    tools:layout="@layout/fragment_fourth">
-    <action
-      android:id="@+id/action_fourthFragment_to_thirdFragment"
-      app:destination="@id/thirdFragment"/>
-    <action
-      android:id="@+id/action_fourthFragment_to_FirstFragment"
-      app:destination="@id/course_fragment"/>
-  </fragment>
+    tools:layout="@layout/fragment_course_selection"/>
 
 
 </navigation>
