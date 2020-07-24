@@ -11,9 +11,10 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
     <activity
-      android:label="@string/title_activity_main"
-      android:name=".controller.MainActivity"
-      android:theme="@style/AppTheme.NoActionBar">
+      android:label="@string/title_activity_navigation"
+      android:name=".controller.NavigationActivity">
+    </activity>
+    <activity android:name=".controller.LoginActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 

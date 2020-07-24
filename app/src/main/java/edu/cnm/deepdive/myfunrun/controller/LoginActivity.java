@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import edu.cnm.deepdive.myfunrun.R;
+import edu.cnm.deepdive.myfunrun.service.GoogleSignInService;
 
 public class LoginActivity  extends AppCompatActivity {
 
+  private static final int LOGIN_REQUEST_CODE = 1000;
   private GoogleSignInService service;
 
   @Override
@@ -36,7 +39,7 @@ public class LoginActivity  extends AppCompatActivity {
   }
 
   private void switchToMain() {
-    Intent intent = new Intent(this, MainActivity.class);
+    Intent intent = new Intent(this, NavigationActivity.class);
     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
   }
