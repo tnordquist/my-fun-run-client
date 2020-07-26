@@ -1,25 +1,23 @@
-package edu.cnm.deepdive.myfunrun.controller.ui.dashboard;
+package edu.cnm.deepdive.myfunrun.controller;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import edu.cnm.deepdive.myfunrun.R;
+import edu.cnm.deepdive.myfunrun.viewmodel.RaceViewModel;
 import edu.cnm.deepdive.myfunrun.model.entity.Race;
 import edu.cnm.deepdive.myfunrun.view.RaceAdapter;
 import edu.cnm.deepdive.myfunrun.view.RaceAdapter.OnClickListener;
 
 
-public class RacesFragment extends Fragment implements OnClickListener {
+public class RaceFragment extends Fragment implements OnClickListener {
 
   private RaceViewModel raceViewModel;
   private RecyclerView raceList;
@@ -30,7 +28,7 @@ public class RacesFragment extends Fragment implements OnClickListener {
     View root = inflater.inflate(R.layout.fragment_races, container, false);
     raceList = root.findViewById(R.id.race_list);
     addRace = root.findViewById(R.id.add_race);
-    addRace.setOnClickListener((v) -> { /* TODO invoke race edit functionality for race */ });
+    addRace.setOnClickListener((v) -> editRace(0));
     return root;
   }
 
@@ -48,6 +46,11 @@ public class RacesFragment extends Fragment implements OnClickListener {
 
   @Override
   public void onClick(View view, int position, Race race) {
-// TODO invoke raceEdit functionality.
+    editRace(race.getId());
+  }
+
+  private void editRace(long id) {
+    RaceEditFragment fragment = RaceEditFragment.newInstance(id);
+    fragment.show(getChildFragmentManager(), fragment.getClass().getName());
   }
 }

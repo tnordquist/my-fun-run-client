@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.myfunrun.controller.ui.dashboard;
+package edu.cnm.deepdive.myfunrun.viewmodel;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -40,10 +40,12 @@ public class RaceViewModel extends AndroidViewModel implements LifecycleObserver
   }
 
   public LiveData<List<Race>> getRaces() {
+    throwable.setValue(null);
     return raceRepository.getAll();
   }
 
   public void setRaceId(long id){
+    throwable.setValue(null);
     pending.add(
         raceRepository.get(id)
             .subscribe(
@@ -56,5 +58,16 @@ public class RaceViewModel extends AndroidViewModel implements LifecycleObserver
   @OnLifecycleEvent(Event.ON_STOP)
   private void clearPending(){
     pending.clear();
+  }
+
+  public void save(Race race) {
+    throwable.setValue(null);
+    pending.add(
+        raceRepository.save(race)
+            .subscribe(
+                () -> {},
+                (throwable) -> this.throwable.postValue(throwable)
+            )
+    );
   }
 }

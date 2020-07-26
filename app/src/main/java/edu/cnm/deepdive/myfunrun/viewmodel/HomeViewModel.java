@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.myfunrun.controller.ui.home;
+package edu.cnm.deepdive.myfunrun.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

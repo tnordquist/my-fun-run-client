@@ -8,7 +8,7 @@
   <fragment
     android:id="@+id/navigation_home"
     android:label="@string/title_home"
-    android:name="edu.cnm.deepdive.myfunrun.controller.ui.home.HomeFragment"
+    android:name="edu.cnm.deepdive.myfunrun.controller.HomeFragment"
     tools:layout="@layout/fragment_home">
 
   </fragment>
@@ -16,12 +16,12 @@
   <fragment
     android:id="@+id/navigation_races"
     android:label="@string/title_races"
-    android:name="edu.cnm.deepdive.myfunrun.controller.ui.dashboard.RacesFragment"
+    android:name="edu.cnm.deepdive.myfunrun.controller.RaceFragment"
     tools:layout="@layout/fragment_races"/>
 
   <fragment
     android:id="@+id/navigation_notifications"
     android:label="@string/title_history"
-    android:name="edu.cnm.deepdive.myfunrun.controller.ui.notifications.HistoryFragment"
+    android:name="edu.cnm.deepdive.myfunrun.controller.HistoryFragment"
     tools:layout="@layout/fragment_history"/>
 </navigation>

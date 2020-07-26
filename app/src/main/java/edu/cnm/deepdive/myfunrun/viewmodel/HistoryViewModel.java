@@ -1,14 +1,14 @@
-package edu.cnm.deepdive.myfunrun.controller.ui.notifications;
+package edu.cnm.deepdive.myfunrun.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class HistoryViewModel extends ViewModel {
 
   private MutableLiveData<String> mText;
 
-  public NotificationsViewModel() {
+  public HistoryViewModel() {
     mText = new MutableLiveData<>();
     mText.setValue("This is notifications fragment");
   }

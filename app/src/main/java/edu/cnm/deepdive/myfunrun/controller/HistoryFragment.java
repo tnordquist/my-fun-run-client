@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.myfunrun.controller.ui.notifications;
+package edu.cnm.deepdive.myfunrun.controller;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,18 +11,19 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import edu.cnm.deepdive.myfunrun.R;
+import edu.cnm.deepdive.myfunrun.viewmodel.HistoryViewModel;
 
 public class HistoryFragment extends Fragment {
 
-  private NotificationsViewModel notificationsViewModel;
+  private HistoryViewModel historyViewModel;
 
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container, Bundle savedInstanceState) {
-    notificationsViewModel =
-        ViewModelProviders.of(this).get(NotificationsViewModel.class);
+    historyViewModel =
+        ViewModelProviders.of(this).get(HistoryViewModel.class);
     View root = inflater.inflate(R.layout.fragment_history, container, false);
     final TextView textView = root.findViewById(R.id.text_notifications);
-    notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+    historyViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
       @Override
       public void onChanged(@Nullable String s) {
         textView.setText(s);
