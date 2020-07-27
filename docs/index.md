@@ -19,18 +19,18 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
 
 * [Entity-relationship diagram](erd.md)
 
-## Intended Users
+## Intended Users and User Stories
 
-* Race Enthusiasts 
+* Race enthusiasts who compete in multiple races and train regularly.
 
     > As an ultra-runner who runs long hours, I want to be able to track my runs so that I can see 
                        my progress while training.
 
-* New Runners
+* Someone who is new to running and has not developed the discipline of running.
 
     > I am new to running, and I am looking for help staying motivated, so I can reach my goals!
           
-* Bored Runners
+* Someone runs regularly but is feeling "stuck" in their routine and is looking for something new.
     > I run regularly along my same route and would like something new and exciting without having 
                   to go far from home.
 
@@ -80,6 +80,11 @@ possible. Below is a list of such devices and/or services.
 * [Pojo Classes](https://github.com/christie274/my-fun-run/tree/master/app/src/main/java/edu/cnm/deepdive/myfunrun/model/pojo)
 
 * [Data Definition Language](ddl.md)
+
+## Stretch Goals
+ * Adding a section for users to set goals
+ * Adding a leaderboard for users to compete
+ * Allowing comments between users
 
 ## License information
 
