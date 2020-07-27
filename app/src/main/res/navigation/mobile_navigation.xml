@@ -20,7 +20,7 @@
     tools:layout="@layout/fragment_races"/>
 
   <fragment
-    android:id="@+id/navigation_notifications"
+    android:id="@+id/navigation_history"
     android:label="@string/title_history"
     android:name="edu.cnm.deepdive.myfunrun.controller.HistoryFragment"
     tools:layout="@layout/fragment_history"/>
