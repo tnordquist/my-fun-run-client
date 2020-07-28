@@ -28,7 +28,7 @@ public class HistoryRepository {
     raceDao = database.getRaceDao();
   }
 
-  public LiveData<List<History>> getAll() {
+  public LiveData<List<HistoryWithDetails>> getAll() {
     return historyDao.selectAll();
   }
 

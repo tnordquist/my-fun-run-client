@@ -96,5 +96,7 @@ private Long raceId;
     this.end = end;
   }
 
-
+public double getPace() {
+    return distance * 3600.0 / (end.getTime() - start.getTime());
+}
 }

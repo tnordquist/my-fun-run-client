@@ -33,8 +33,9 @@ public interface HistoryDao {
   @Delete
   Single<Integer> delete(History... histories);
 
+  @Transaction
   @Query("SELECT * FROM History ORDER BY distance")
-  LiveData<List<History>> selectAll();
+  LiveData<List<HistoryWithDetails>> selectAll();
 
  // @Transaction
  // @Query("SELECT * FROM History ORDER BY ")

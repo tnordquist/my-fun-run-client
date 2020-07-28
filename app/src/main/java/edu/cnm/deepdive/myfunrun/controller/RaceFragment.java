@@ -27,7 +27,7 @@ public class RaceFragment extends Fragment implements OnClickListener {
       ViewGroup container, Bundle savedInstanceState) {
     View root = inflater.inflate(R.layout.fragment_races, container, false);
     raceList = root.findViewById(R.id.race_list);
-    addRace = root.findViewById(R.id.add_race);
+    addRace = root.findViewById(R.id.ADD_HISTORY);
     addRace.setOnClickListener((v) -> editRace(0));
     return root;
   }

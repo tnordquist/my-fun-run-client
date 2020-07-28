@@ -70,4 +70,15 @@ public class RaceViewModel extends AndroidViewModel implements LifecycleObserver
             )
     );
   }
+
+  public void delete (Race race) {
+    throwable.setValue(null);
+    pending.add(
+        raceRepository.delete(race)
+            .subscribe(
+                () -> {},
+                (throwable) -> this.throwable.postValue(throwable)
+            )
+    );
+  }
 }
