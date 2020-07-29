@@ -23,7 +23,7 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
  While in the chosen race theme the app also tracks your time, distance and pace. Lastly, after 
  ending your run, the user can store stats to be viewed later. Stretch goals currently include 
  adding, GPS, an accelerometer, timer and users being able to set training goals. My Fun Run app is
-  ractical and fun!
+ practical and fun!
  
 
 ## Design Documentation
