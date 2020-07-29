@@ -44,24 +44,23 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
 
     > I am new to running, and I am looking for help staying motivated, so I can reach my goals!
           
-* Someone runs regularly but is feeling "stuck" in their routine and is looking for something new.
+* Someone runs regularly but feels "stuck" in their routine and is looking for something new.
     > I run regularly along my same route and would like something new and exciting without having 
-                  to go far from home.
-                                                                                                    
-                                                                                                    
-                                                                                                    
+                  to go far from home.                                                                                      
+                                                                                                                                                                                             
  ## Summary of Current State of Application
  
  My Fun Run is currently in mid-development. The app runs on an emulator (Pixel 3a API 28), but you
- are not able to fully execute the app. Once you sign-in through Google you are brought to a blank
- Home screen. Using bottom navigation you can move to the Race selection screen. There you will find
- a list of races, but you cannot navigate beyond that point. In other words, you are not able to 
- begin tracking your run.ONce you select a run an alert dialog box would show up and allow you an 
- edit option or option to start race. At that point, you would begin running while the app accesses
- GPS to track your distance. Through use of the timer it will track your time and create a pace for 
- you based on time and distance. After completing your run you can review your stats and save them 
- to the History log. You can also navigate from the home screen to the History screen if you don't 
- wish to start a race but only review previous runs. The History Fragment is currently blank. 
+ are not able to fully execute the app. I have successfully ran the app in horizontal and vertical
+ views.Once you sign-in through Google you are brought to a blankHome screen. Using bottom navigation you
+ can move to the Race selection screen. There you will find a list of races, you can edit the race 
+ details, but you cannot navigate beyond that point. In other words, you are not able to 
+ begin tracking your run. Once you select a run an alert dialog box does show up and allows you an 
+ 'edit' option and will have an option to 'start race' at a later stage in development. At that
+ point, you would begin running while the app accesses GPS to track your distance. GPS has not been 
+ added to the app yet. The app will also need a timer to track time the user runs which has not been 
+ added yet. You can also navigate from the home screen to the History screen and back to Home. The
+ History Fragment is currently blank. 
  
 #### Improvements
  * Add audio to race themes
@@ -69,12 +68,10 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
  * Add color
  
 #### Stretch Goals
+ * Add GPS
+ * Add Timer
  * Add leader board
- * Add ability to add other users as "friends"
- * Add the ability for users to comment on other user's races
- * Add ability for users to make training goals                                                                                                   
-
-    
+                                                                                               
 ## Devices and External Services
 
 This app will utilize a variety of devices and/or services to provide the best user experience 
