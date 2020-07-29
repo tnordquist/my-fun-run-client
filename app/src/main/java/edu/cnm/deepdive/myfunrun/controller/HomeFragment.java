@@ -11,6 +11,9 @@ import androidx.lifecycle.ViewModelProviders;
 import edu.cnm.deepdive.myfunrun.R;
 import edu.cnm.deepdive.myfunrun.viewmodel.HomeViewModel;
 
+/**
+ * The type Home fragment.
+ */
 public class HomeFragment extends Fragment {
 
   private HomeViewModel homeViewModel;

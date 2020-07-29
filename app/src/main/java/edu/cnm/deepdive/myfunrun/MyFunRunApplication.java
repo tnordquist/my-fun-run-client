@@ -6,6 +6,9 @@ import edu.cnm.deepdive.myfunrun.service.GoogleSignInService;
 import edu.cnm.deepdive.myfunrun.service.MyFunRunDatabase;
 import io.reactivex.schedulers.Schedulers;
 
+/**
+ * The type My fun run application.
+ */
 public class MyFunRunApplication extends Application {
 
   @Override

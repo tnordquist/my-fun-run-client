@@ -15,6 +15,9 @@ import edu.cnm.deepdive.myfunrun.service.RaceRepository;
 import io.reactivex.disposables.CompositeDisposable;
 import java.util.List;
 
+/**
+ * The type Race view model.
+ */
 public class RaceViewModel extends AndroidViewModel implements LifecycleObserver {
 
   private final RaceRepository raceRepository;
@@ -22,6 +25,11 @@ public class RaceViewModel extends AndroidViewModel implements LifecycleObserver
   private final MutableLiveData<Throwable> throwable;
   private final CompositeDisposable pending;
 
+  /**
+   * Instantiates a new Race view model.
+   *
+   * @param application the application
+   */
   public RaceViewModel(@NonNull Application application) {
     super(application);
     raceRepository = new RaceRepository(application);
@@ -31,19 +39,39 @@ public class RaceViewModel extends AndroidViewModel implements LifecycleObserver
 
   }
 
+  /**
+   * Gets race.
+   *
+   * @return the race
+   */
   public LiveData<RaceWithHistory> getRace() {
     return race;
   }
 
+  /**
+   * Gets throwable.
+   *
+   * @return the throwable
+   */
   public LiveData<Throwable> getThrowable() {
     return throwable;
   }
 
+  /**
+   * Gets races.
+   *
+   * @return the races
+   */
   public LiveData<List<Race>> getRaces() {
     throwable.setValue(null);
     return raceRepository.getAll();
   }
 
+  /**
+   * Set race id.
+   *
+   * @param id the id
+   */
   public void setRaceId(long id){
     throwable.setValue(null);
     pending.add(
@@ -60,6 +88,11 @@ public class RaceViewModel extends AndroidViewModel implements LifecycleObserver
     pending.clear();
   }
 
+  /**
+   * Save.
+   *
+   * @param race the race
+   */
   public void save(Race race) {
     throwable.setValue(null);
     pending.add(
@@ -71,6 +104,11 @@ public class RaceViewModel extends AndroidViewModel implements LifecycleObserver
     );
   }
 
+  /**
+   * Delete.
+   *
+   * @param race the race
+   */
   public void delete (Race race) {
     throwable.setValue(null);
     pending.add(

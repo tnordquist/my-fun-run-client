@@ -17,6 +17,9 @@ import edu.cnm.deepdive.myfunrun.view.RaceAdapter;
 import edu.cnm.deepdive.myfunrun.view.RaceAdapter.OnClickListener;
 
 
+/**
+ * The type Race fragment.
+ */
 public class RaceFragment extends Fragment implements OnClickListener {
 
   private RaceViewModel raceViewModel;

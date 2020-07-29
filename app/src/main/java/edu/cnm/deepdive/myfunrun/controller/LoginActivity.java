@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import edu.cnm.deepdive.myfunrun.R;
 import edu.cnm.deepdive.myfunrun.service.GoogleSignInService;
 
+/**
+ * The type Login activity.
+ */
 public class LoginActivity  extends AppCompatActivity {
 
   private static final int LOGIN_REQUEST_CODE = 1000;

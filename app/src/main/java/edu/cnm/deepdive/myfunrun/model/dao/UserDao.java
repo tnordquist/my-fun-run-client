@@ -16,28 +16,72 @@ import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * The interface User dao.
+ */
 @Dao
 public interface UserDao {
 
+  /**
+   * Insert single.
+   *
+   * @param user the user
+   * @return the single
+   */
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<Long> insert(User user);
 
+  /**
+   * Insert single.
+   *
+   * @param users the users
+   * @return the single
+   */
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<List<Long>> insert(User... users);
 
+  /**
+   * Insert single.
+   *
+   * @param users the users
+   * @return the single
+   */
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<List<Long>> insert(Collection<User> users);
 
+  /**
+   * Update single.
+   *
+   * @param users the users
+   * @return the single
+   */
   @Update
   Single<Integer> update(User... users);
 
+  /**
+   * Delete single.
+   *
+   * @param users the users
+   * @return the single
+   */
   @Delete
   Single<Integer> delete(User... users);
 
- @Transaction
+  /**
+   * Select all live data.
+   *
+   * @return the live data
+   */
+  @Transaction
  @Query("SELECT * FROM User ORDER BY display_name")
   LiveData<List<User>> selectAll();
 
+  /**
+   * Select by id single.
+   *
+   * @param userId the user id
+   * @return the single
+   */
   @Transaction
   @Query("SELECT * FROM User WHERE user_id = :userId")
   Single<UserWithHistory> selectById(long userId);

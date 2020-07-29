@@ -12,6 +12,9 @@ import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 import java.util.List;
 
+/**
+ * The type History repository.
+ */
 public class HistoryRepository {
 
   private final Context context;
@@ -20,6 +23,11 @@ public class HistoryRepository {
   private final UserDao userDao;
   private final RaceDao raceDao;
 
+  /**
+   * Instantiates a new History repository.
+   *
+   * @param context the context
+   */
   public HistoryRepository(Context context) {
     this.context = context;
     database = MyFunRunDatabase.getInstance();
@@ -28,15 +36,32 @@ public class HistoryRepository {
     raceDao = database.getRaceDao();
   }
 
+  /**
+   * Gets all.
+   *
+   * @return the all
+   */
   public LiveData<List<HistoryWithDetails>> getAll() {
     return historyDao.selectAll();
   }
 
+  /**
+   * Get single.
+   *
+   * @param id the id
+   * @return the single
+   */
   public Single<HistoryWithDetails> get(long id) {
     return historyDao.selectById(id)
         .subscribeOn(Schedulers.io());
   }
 
+  /**
+   * Save completable.
+   *
+   * @param history the history
+   * @return the completable
+   */
   public Completable save(History history) {
     if (history.getId() == 0) {
       return Completable.fromSingle(historyDao.insert(history))
@@ -47,6 +72,12 @@ public class HistoryRepository {
     }
   }
 
+  /**
+   * Delete completable.
+   *
+   * @param history the history
+   * @return the completable
+   */
   public Completable delete(History history) {
     if (history.getId() == 0) {
       return Completable.fromAction(() -> {})

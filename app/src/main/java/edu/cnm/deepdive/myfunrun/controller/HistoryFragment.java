@@ -17,6 +17,9 @@ import edu.cnm.deepdive.myfunrun.view.HistoryAdapter.OnClickListener;
 import edu.cnm.deepdive.myfunrun.viewmodel.HistoryViewModel;
 
 
+/**
+ * The type History fragment.
+ */
 public class HistoryFragment extends Fragment implements OnClickListener{
 
   private HistoryViewModel historyViewModel;

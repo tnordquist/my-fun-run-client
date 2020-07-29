@@ -30,6 +30,9 @@ import edu.cnm.deepdive.myfunrun.R;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * The type Permissions fragment.
+ */
 public class PermissionsFragment extends DialogFragment {
 
   private static final String PERMISSIONS_TO_EXPLAIN_KEY = "permissions_to_explain";
@@ -37,6 +40,13 @@ public class PermissionsFragment extends DialogFragment {
   private static final String EXPLANATION_KEY_SUFFIX = "_explanation";
   private static final String PERMISSION_DELIMITER = "\\.";
 
+  /**
+   * Create instance permissions fragment.
+   *
+   * @param permissionsToExplain the permissions to explain
+   * @param permissionsToRequest the permissions to request
+   * @return the permissions fragment
+   */
   @NonNull
   public static PermissionsFragment createInstance(@NonNull String[] permissionsToExplain,
       String[] permissionsToRequest) {
@@ -107,8 +117,16 @@ public class PermissionsFragment extends DialogFragment {
     return (builder.length() > 0) ? builder.substring(0, builder.length() - 1) : "";
   }
 
+  /**
+   * The interface On acknowledge listener.
+   */
   public interface OnAcknowledgeListener {
 
+    /**
+     * On acknowledge.
+     *
+     * @param permissionToRequest the permission to request
+     */
     void onAcknowledge(String[] permissionToRequest);
 
   }

@@ -19,6 +19,9 @@ import edu.cnm.deepdive.myfunrun.service.MyFunRunDatabase.Converters;
 import io.reactivex.schedulers.Schedulers;
 import java.util.Date;
 
+/**
+ * The type My fun run database.
+ */
 @Database(
     entities = {Race.class, User.class, History.class},
     version = 1,
@@ -31,16 +34,41 @@ public abstract class MyFunRunDatabase extends RoomDatabase {
 
   private static Application context;
 
+  /**
+   * Sets context.
+   *
+   * @param context the context
+   */
   public static void setContext(Application context) {
     MyFunRunDatabase.context = context;
   }
 
+  /**
+   * Gets user dao.
+   *
+   * @return the user dao
+   */
   public abstract UserDao getUserDao();
 
+  /**
+   * Gets race dao.
+   *
+   * @return the race dao
+   */
   public abstract RaceDao getRaceDao();
 
+  /**
+   * Gets history dao.
+   *
+   * @return the history dao
+   */
   public abstract HistoryDao getHistoryDao();
 
+  /**
+   * Gets instance.
+   *
+   * @return the instance
+   */
   public static MyFunRunDatabase getInstance() {
     return InstanceHolder.INSTANCE;
   }
@@ -76,11 +104,29 @@ public abstract class MyFunRunDatabase extends RoomDatabase {
           .subscribe();
     }
   }
+
+  /**
+   * The type Converters.
+   */
   public static class Converters {
+
+    /**
+     * Date to long long.
+     *
+     * @param value the value
+     * @return the long
+     */
     @TypeConverter
     public static Long dateToLong(Date value) {
       return (value != null) ? value.getTime() : null;
     }
+
+    /**
+     * Long to date date.
+     *
+     * @param value the value
+     * @return the date
+     */
     @TypeConverter
     public static Date longToDate(Long value) {
       return (value != null) ? new Date(value) : null;

@@ -11,6 +11,9 @@ import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 import java.util.List;
 
+/**
+ * The type Race repository.
+ */
 public class RaceRepository {
 
 
@@ -18,21 +21,43 @@ public class RaceRepository {
   private final MyFunRunDatabase database;
   private final RaceDao raceDao;
 
+  /**
+   * Instantiates a new Race repository.
+   *
+   * @param context the context
+   */
   public RaceRepository(Context context) {
     this.context = context;
     database = MyFunRunDatabase.getInstance();
     raceDao = database.getRaceDao();
   }
 
+  /**
+   * Gets all.
+   *
+   * @return the all
+   */
   public LiveData<List<Race>> getAll() {
     return raceDao.selectAll();
   }
 
+  /**
+   * Get single.
+   *
+   * @param id the id
+   * @return the single
+   */
   public Single<RaceWithHistory> get(long id) {
     return raceDao.selectById(id)
         .subscribeOn(Schedulers.io());
   }
 
+  /**
+   * Save completable.
+   *
+   * @param race the race
+   * @return the completable
+   */
   public Completable save(Race race) {
     if (race.getId() == 0) {
       return Completable.fromSingle(raceDao.insert(race))
@@ -43,6 +68,12 @@ public class RaceRepository {
     }
   }
 
+  /**
+   * Delete completable.
+   *
+   * @param race the race
+   * @return the completable
+   */
   public Completable delete(Race race) {
     if (race.getId() == 0) {
       return Completable.fromAction(() -> {})

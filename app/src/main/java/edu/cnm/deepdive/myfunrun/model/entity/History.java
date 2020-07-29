@@ -11,6 +11,9 @@ import java.util.Date;
 import javax.annotation.Nonnull;
 
 
+/**
+ * The type History.
+ */
 @Entity(
     foreignKeys = {
         @ForeignKey(
@@ -46,57 +49,122 @@ private Long raceId;
   @Nonnull
   private Date end;
 
+  /**
+   * Gets id.
+   *
+   * @return the id
+   */
   public long getId() {
     return id;
   }
 
+  /**
+   * Sets id.
+   *
+   * @param id the id
+   */
   public void setId(long id) {
     this.id = id;
   }
 
+  /**
+   * Gets user id.
+   *
+   * @return the user id
+   */
   public long getUserId() {
     return userId;
   }
 
+  /**
+   * Sets user id.
+   *
+   * @param userId the user id
+   */
   public void setUserId(long userId) {
     this.userId = userId;
   }
 
+  /**
+   * Gets race id.
+   *
+   * @return the race id
+   */
   public Long getRaceId() {
     return raceId;
   }
 
+  /**
+   * Sets race id.
+   *
+   * @param raceId the race id
+   */
   public void setRaceId(Long raceId) {
     this.raceId = raceId;
   }
 
+  /**
+   * Gets distance.
+   *
+   * @return the distance
+   */
   public int getDistance() {
     return distance;
   }
 
+  /**
+   * Sets distance.
+   *
+   * @param distance the distance
+   */
   public void setDistance(int distance) {
     this.distance = distance;
   }
 
+  /**
+   * Gets start.
+   *
+   * @return the start
+   */
   @Nonnull
   public Date getStart() {
     return start;
   }
 
+  /**
+   * Sets start.
+   *
+   * @param start the start
+   */
   public void setStart(@Nonnull Date start) {
     this.start = start;
   }
 
+  /**
+   * Gets end.
+   *
+   * @return the end
+   */
   @Nonnull
   public Date getEnd() {
     return end;
   }
 
+  /**
+   * Sets end.
+   *
+   * @param end the end
+   */
   public void setEnd(@Nonnull Date end) {
     this.end = end;
   }
 
-public double getPace() {
+  /**
+   * Gets pace.
+   *
+   * @return the pace
+   */
+  public double getPace() {
     return distance * 3600.0 / (end.getTime() - start.getTime());
 }
 }

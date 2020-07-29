@@ -15,6 +15,9 @@ import edu.cnm.deepdive.myfunrun.service.HistoryRepository;
 import io.reactivex.disposables.CompositeDisposable;
 import java.util.List;
 
+/**
+ * The type History view model.
+ */
 public class HistoryViewModel extends AndroidViewModel implements LifecycleObserver {
 
   private final HistoryRepository historyRepository;
@@ -23,6 +26,11 @@ public class HistoryViewModel extends AndroidViewModel implements LifecycleObser
   private final CompositeDisposable pending;
 
 
+  /**
+   * Instantiates a new History view model.
+   *
+   * @param application the application
+   */
   public HistoryViewModel(@NonNull Application application) {
     super(application);
     historyRepository = new HistoryRepository(application);
@@ -32,18 +40,38 @@ public class HistoryViewModel extends AndroidViewModel implements LifecycleObser
 
   }
 
+  /**
+   * Gets history.
+   *
+   * @return the history
+   */
   public LiveData<HistoryWithDetails> getHistory() {
     return history;
   }
 
+  /**
+   * Gets throwable.
+   *
+   * @return the throwable
+   */
   public LiveData<Throwable> getThrowable() {
     return throwable;
   }
 
+  /**
+   * Gets histories.
+   *
+   * @return the histories
+   */
   public LiveData<List<HistoryWithDetails>> getHistories() {
     return historyRepository.getAll();
   }
 
+  /**
+   * Sets history id.
+   *
+   * @param id the id
+   */
   public void setHistoryId(long id) {
     throwable.setValue(null);
     pending.add(
@@ -55,6 +83,11 @@ public class HistoryViewModel extends AndroidViewModel implements LifecycleObser
     );
   }
 
+  /**
+   * Save.
+   *
+   * @param history the history
+   */
   public void save(History history) {
     throwable.setValue(null);
     pending.add(
@@ -66,6 +99,11 @@ public class HistoryViewModel extends AndroidViewModel implements LifecycleObser
     );
   }
 
+  /**
+   * Delete.
+   *
+   * @param history the history
+   */
   public void delete (History history) {
     throwable.setValue(null);
     pending.add(

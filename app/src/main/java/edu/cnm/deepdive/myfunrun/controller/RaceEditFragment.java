@@ -21,6 +21,9 @@ import edu.cnm.deepdive.myfunrun.model.entity.Race;
 import edu.cnm.deepdive.myfunrun.viewmodel.RaceViewModel;
 
 
+/**
+ * The type Race edit fragment.
+ */
 public class RaceEditFragment extends DialogFragment implements TextWatcher {
 
   private static final String ID_KEY = "id";
@@ -32,6 +35,12 @@ public class RaceEditFragment extends DialogFragment implements TextWatcher {
   private RaceViewModel raceViewModel;
   private EditText name;
 
+  /**
+   * New instance race edit fragment.
+   *
+   * @param id the id
+   * @return the race edit fragment
+   */
   public static RaceEditFragment newInstance(long id) {
     RaceEditFragment fragment = new RaceEditFragment();
     Bundle args = new Bundle();

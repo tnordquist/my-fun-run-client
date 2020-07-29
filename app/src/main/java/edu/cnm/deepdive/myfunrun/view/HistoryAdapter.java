@@ -14,6 +14,9 @@ import edu.cnm.deepdive.myfunrun.view.HistoryAdapter.Holder;
 import java.text.DateFormat;
 import java.util.List;
 
+/**
+ * The type History adapter.
+ */
 public class HistoryAdapter extends RecyclerView.Adapter<Holder> {
 
 
@@ -25,6 +28,13 @@ public class HistoryAdapter extends RecyclerView.Adapter<Holder> {
   private final String distanceFormat;
   private final String paceFormat;
 
+  /**
+   * Instantiates a new History adapter.
+   *
+   * @param context   the context
+   * @param histories the histories
+   * @param listener  the listener
+   */
   public HistoryAdapter(Context context,
       List<HistoryWithDetails> histories, OnClickListener listener) {
     this.context = context;
@@ -54,6 +64,9 @@ public class HistoryAdapter extends RecyclerView.Adapter<Holder> {
     return histories.size();
   }
 
+  /**
+   * The type Holder.
+   */
   class Holder extends RecyclerView.ViewHolder {
 
     private final TextView date;
@@ -63,6 +76,11 @@ public class HistoryAdapter extends RecyclerView.Adapter<Holder> {
     private final TextView pace;
     private final TextView race;
 
+    /**
+     * Instantiates a new Holder.
+     *
+     * @param itemView the item view
+     */
     public Holder(@NonNull View itemView) {
       super(itemView);
       date = itemView.findViewById(R.id.date);
@@ -89,8 +107,18 @@ public class HistoryAdapter extends RecyclerView.Adapter<Holder> {
     }
   }
 
+  /**
+   * The interface On click listener.
+   */
   public interface OnClickListener {
 
+    /**
+     * On click.
+     *
+     * @param view     the view
+     * @param position the position
+     * @param history  the history
+     */
     void onClick(View view, int position, History history);
   }
 }

@@ -12,12 +12,26 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
  experience of a live themed run. Users can view visuals and hear audio prompts during their runs as
  a part of this experience. If a user does not want to utilize a theme they can opt for a simple 
  timed run option. Stats from runs can be stored for viewing later.
+ 
+ My motivation for building this app is because I do not like to run long distances. I do, however,
+ really enjoy theme races and thought that this app could not only help motivate people but in this 
+ unique season where theme runs have been cancelled, this will allow uses to feel as if they are 
+ participating in these fun and exciting races.
+ 
+ After using Google Sign-in there are three key functional components to my app. The first component
+ is that users are able to choose a race theme that will give the use audio prompts as they run. 
+ While in the chosen race theme the app also tracks your time, distance and pace. Lastly, after 
+ ending your run, the user can store stats to be viewed later. The app also has multiple stretch 
+ goals such as adding other users as "friends", giving space to set training goals, and being able
+ to compete with other users through a leader board. My Fun Run app is practical and fun!
+ 
 
 ## Design Documentation
 
 * [Wireframe diagram](wireframe.md)
 
 * [Entity-relationship diagram](erd.md)
+
 
 ## Intended Users and User Stories
 
@@ -33,6 +47,32 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
 * Someone runs regularly but is feeling "stuck" in their routine and is looking for something new.
     > I run regularly along my same route and would like something new and exciting without having 
                   to go far from home.
+                                                                                                    
+                                                                                                    
+                                                                                                    
+ ## Summary of Current State of Application
+ 
+ My Fun Run is currently in mid-development. The app runs on an emulator (Pixel 3a API 28), but you
+ are not able to fully execute the app. Once you sign-in through Google you are brought to a blank
+ Home screen. Using bottom navigation you can move to the Race selection screen. There you will find
+ a list of races, but you cannot navigate beyond that point. In other words, you are not able to 
+ begin tracking your run.ONce you select a run an alert dialog box would show up and allow you an 
+ edit option or option to start race. At that point, you would begin running while the app accesses
+ GPS to track your distance. Through use of the timer it will track your time and create a pace for 
+ you based on time and distance. After completing your run you can review your stats and save them 
+ to the History log. You can also navigate from the home screen to the History screen if you don't 
+ wish to start a race but only review previous runs. The History Fragment is currently blank. 
+ 
+ Aesthetic/Cosmetic Improvements
+ * Add audio to race themes
+ * Add visuals
+ * Add color
+ 
+ Stretch Goals
+ * Add leader board
+ * Add ability to add other users as "friends"
+ * Add the ability for users to comment on other user's races
+ * Add ability for users to make training goals                                                                                                   
 
     
 ## Devices and External Services
@@ -83,8 +123,11 @@ possible. Below is a list of such devices and/or services.
 
 ## Stretch Goals
  * Adding a section for users to set goals
- * Adding a leaderboard for users to compete
+ * Adding a leaderboard for users to compete with other users
  * Allowing comments between users
+ 
+ ## Build Instructions
+ * [Build Instructions](build_instructions.md)
 
 ## License information
 
@@ -104,4 +147,5 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-For copyright &amp; license information on the libraries incorporated into _My Fun Run_, see [_Notice_](docs/notice.md).
+For copyright &amp; license information on the libraries incorporated into _My Fun Run_, see 
+[_Notice_](notice.md). 

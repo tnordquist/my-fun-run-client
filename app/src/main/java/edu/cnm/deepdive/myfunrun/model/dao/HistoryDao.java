@@ -15,24 +15,62 @@ import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * The interface History dao.
+ */
 @Dao
 public interface HistoryDao {
 
+  /**
+   * Insert single.
+   *
+   * @param history the history
+   * @return the single
+   */
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<Long> insert(History history);
 
+  /**
+   * Insert single.
+   *
+   * @param histories the histories
+   * @return the single
+   */
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<List<Long>> insert(History... histories);
 
+  /**
+   * Insert single.
+   *
+   * @param histories the histories
+   * @return the single
+   */
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<List<Long>> insert(Collection<History> histories);
 
+  /**
+   * Update single.
+   *
+   * @param histories the histories
+   * @return the single
+   */
   @Update
   Single<Integer> update(History... histories);
 
+  /**
+   * Delete single.
+   *
+   * @param histories the histories
+   * @return the single
+   */
   @Delete
   Single<Integer> delete(History... histories);
 
+  /**
+   * Select all live data.
+   *
+   * @return the live data
+   */
   @Transaction
   @Query("SELECT * FROM History ORDER BY distance")
   LiveData<List<HistoryWithDetails>> selectAll();
@@ -41,6 +79,12 @@ public interface HistoryDao {
  // @Query("SELECT * FROM History ORDER BY ")
  // LiveData<List<History>> selectById;
 
+  /**
+   * Select by id single.
+   *
+   * @param historyId the history id
+   * @return the single
+   */
   @Transaction
   @Query("SELECT * FROM History WHERE History_id = :historyId")
   Single<HistoryWithDetails> selectById(long historyId);
