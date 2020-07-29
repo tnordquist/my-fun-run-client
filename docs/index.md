@@ -70,7 +70,7 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
 #### Stretch Goals
  * Add GPS
  * Add Timer
- * Add leader board
+ * Add Accelerometer
                                                                                                
 ## Devices and External Services
 
