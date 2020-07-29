@@ -21,9 +21,9 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
  After using Google Sign-in there are three key functional components to my app. The first component
  is that users are able to choose a race theme that will give the use audio prompts as they run. 
  While in the chosen race theme the app also tracks your time, distance and pace. Lastly, after 
- ending your run, the user can store stats to be viewed later. The app also has multiple stretch 
- goals such as adding other users as "friends", giving space to set training goals, and being able
- to compete with other users through a leader board. My Fun Run app is practical and fun!
+ ending your run, the user can store stats to be viewed later. Stretch goals currently include 
+ adding, GPS, an accelerometer, timer and users being able to set training goals. My Fun Run app is
+  ractical and fun!
  
 
 ## Design Documentation
@@ -71,6 +71,7 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
  * Add GPS
  * Add Timer
  * Add Accelerometer
+ * User can set goals
                                                                                                
 ## Devices and External Services
 
