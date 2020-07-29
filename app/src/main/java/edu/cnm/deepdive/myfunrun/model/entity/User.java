@@ -8,7 +8,9 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 /**
- * The type User.
+ * This entity class contains static methods, with convenience annotations,
+ * which provides additional information about user to assist Hibernate in mapping
+ * an entity class field to a table column in a Apache Derby database, and retrieved.
  */
 @Entity(
     indices = @Index(value = "display_name", unique = true)

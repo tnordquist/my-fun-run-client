@@ -9,7 +9,8 @@ import edu.cnm.deepdive.myfunrun.R;
 import edu.cnm.deepdive.myfunrun.service.GoogleSignInService;
 
 /**
- * The type Login activity.
+ * This class contains static methods, with convenience annotations,
+ * which controls activity for logging in tot he app.
  */
 public class LoginActivity  extends AppCompatActivity {
 

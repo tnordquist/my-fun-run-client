@@ -31,7 +31,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
- * The type Permissions fragment.
+ * This class contains static methods, with convenience annotations to allow permission for user.
  */
 public class PermissionsFragment extends DialogFragment {
 
@@ -118,7 +118,7 @@ public class PermissionsFragment extends DialogFragment {
   }
 
   /**
-   * The interface On acknowledge listener.
+   * The interface for listener.
    */
   public interface OnAcknowledgeListener {
 

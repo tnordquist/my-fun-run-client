@@ -7,7 +7,9 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 /**
- * The type Race.
+ *  This entity class contains static methods, with convenience annotations,
+ * which provides additional information about event to assist Hibernate in mapping
+ * an entity class field to a table column in a Apache Derby database, and retrieved.
  */
 @Entity(
     indices = @Index(value = "name", unique = true)

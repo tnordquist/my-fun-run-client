@@ -16,7 +16,8 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * The interface Race dao.
+ * This class contains static methods, with convenience annotations,
+ *  * which update the Races posted by users. Races may be posted, deleted, and retrieved.
  */
 @Dao
 public interface RaceDao {

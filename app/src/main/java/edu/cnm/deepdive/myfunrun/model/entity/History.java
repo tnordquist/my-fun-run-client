@@ -12,7 +12,9 @@ import javax.annotation.Nonnull;
 
 
 /**
- * The type History.
+ * This entity class contains static methods, with convenience annotations,
+ * which provides additional information about history to assist Hibernate in mapping
+ * an entity class field to a table column in a Apache Derby database, and retrieved.
  */
 @Entity(
     foreignKeys = {

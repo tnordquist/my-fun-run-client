@@ -10,7 +10,7 @@ import androidx.navigation.ui.NavigationUI;
 import edu.cnm.deepdive.myfunrun.R;
 
 /**
- * The type Navigation activity.
+ * This class controls the navigation of the toolbar.
  */
 public class NavigationActivity extends AppCompatActivity {
 

@@ -17,7 +17,8 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * The interface User dao.
+ * This class contains static methods, with convenience annotations,
+ *  *  * which update the user info posted by users. User may be posted, deleted, and retrieved.
  */
 @Dao
 public interface UserDao {

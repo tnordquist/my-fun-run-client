@@ -16,7 +16,8 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * The interface History dao.
+ * This class contains static methods, with convenience annotations,
+ * which allow Histories may be posted, deleted, and retrieved.
  */
 @Dao
 public interface HistoryDao {

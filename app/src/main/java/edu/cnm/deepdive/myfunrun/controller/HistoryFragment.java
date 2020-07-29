@@ -18,7 +18,8 @@ import edu.cnm.deepdive.myfunrun.viewmodel.HistoryViewModel;
 
 
 /**
- * The type History fragment.
+ * This class contains static methods, with convenience annotations,
+ *  which control the histories posted by users.
  */
 public class HistoryFragment extends Fragment implements OnClickListener{
 

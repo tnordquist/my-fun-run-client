@@ -6,7 +6,7 @@ import edu.cnm.deepdive.myfunrun.model.entity.User;
 import java.util.List;
 
 /**
- * The type User with history.
+ * The class connects list of Histories within User allowing data to be shared.
  */
 public class UserWithHistory extends User {
 

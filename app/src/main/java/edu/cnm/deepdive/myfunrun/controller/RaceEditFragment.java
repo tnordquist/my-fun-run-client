@@ -22,7 +22,8 @@ import edu.cnm.deepdive.myfunrun.viewmodel.RaceViewModel;
 
 
 /**
- * The type Race edit fragment.
+ This class contains static methods, with convenience annotations,
+ *  which allows the user to edit the race details.
  */
 public class RaceEditFragment extends DialogFragment implements TextWatcher {
 

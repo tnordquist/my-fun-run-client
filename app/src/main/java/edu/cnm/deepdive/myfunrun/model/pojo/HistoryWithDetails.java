@@ -7,7 +7,7 @@ import edu.cnm.deepdive.myfunrun.model.entity.Race;
 import edu.cnm.deepdive.myfunrun.model.entity.User;
 
 /**
- * The type History with details.
+ * The class connects list of History with Race and User allowing data to be shared.
  */
 public class HistoryWithDetails extends History {
 

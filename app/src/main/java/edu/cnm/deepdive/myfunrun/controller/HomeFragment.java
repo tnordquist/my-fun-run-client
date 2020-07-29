@@ -12,7 +12,8 @@ import edu.cnm.deepdive.myfunrun.R;
 import edu.cnm.deepdive.myfunrun.viewmodel.HomeViewModel;
 
 /**
- * The type Home fragment.
+ * This class contains static methods, with convenience annotations which inflates the View.
+ *
  */
 public class HomeFragment extends Fragment {
 

@@ -6,7 +6,7 @@ import edu.cnm.deepdive.myfunrun.model.entity.Race;
 import java.util.List;
 
 /**
- * The type Race with history.
+ * The class connects list of Races with History allowing data to be shared.
  */
 public class RaceWithHistory extends Race {
 
