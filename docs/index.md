@@ -63,12 +63,12 @@ _My Fun Run_ is an Android virtual themed race app. Allowing the user to track a
  to the History log. You can also navigate from the home screen to the History screen if you don't 
  wish to start a race but only review previous runs. The History Fragment is currently blank. 
  
- Aesthetic/Cosmetic Improvements
+#### Improvements
  * Add audio to race themes
  * Add visuals
  * Add color
  
- Stretch Goals
+#### Stretch Goals
  * Add leader board
  * Add ability to add other users as "friends"
  * Add the ability for users to comment on other user's races
@@ -121,13 +121,12 @@ possible. Below is a list of such devices and/or services.
 
 * [Data Definition Language](ddl.md)
 
-## Stretch Goals
- * Adding a section for users to set goals
- * Adding a leaderboard for users to compete with other users
- * Allowing comments between users
  
  ## Build Instructions
  * [Build Instructions](build_instructions.md)
+ 
+ ## Basic User Instructions
+ * [Basic User Instructions](basic_user_instructions.md)
 
 ## License information
 
