@@ -13,6 +13,8 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField "String", "CLIENT_ID", "\"314239205062-0fbd7e2dd75u3vvon4h06he90c4ict1b.apps.googleusercontent.com\""
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
