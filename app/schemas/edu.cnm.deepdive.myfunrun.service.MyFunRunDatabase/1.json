@@ -1,0 +1,196 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "c34f9b184014308c8983f99a4cb2586f",
+    "entities": [
+      {
+        "tableName": "Race",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`race_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "race_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "race_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Race_name",
+            "unique": true,
+            "columnNames": [
+              "name"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Race_name` ON `${TABLE_NAME}` (`name`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "User",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `display_name` TEXT NOT NULL, `skill_level` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "user_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "display_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "skillLevel",
+            "columnName": "skill_level",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "user_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_User_display_name",
+            "unique": true,
+            "columnNames": [
+              "display_name"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_User_display_name` ON `${TABLE_NAME}` (`display_name`)"
+          },
+          {
+            "name": "index_User_skill_level",
+            "unique": false,
+            "columnNames": [
+              "skill_level"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_User_skill_level` ON `${TABLE_NAME}` (`skill_level`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "History",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`history_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user_id` INTEGER NOT NULL, `race_id` INTEGER, `distance` INTEGER NOT NULL, `start` INTEGER, `end` INTEGER, FOREIGN KEY(`race_id`) REFERENCES `Race`(`race_id`) ON UPDATE NO ACTION ON DELETE SET NULL , FOREIGN KEY(`user_id`) REFERENCES `User`(`user_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "history_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "user_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "raceId",
+            "columnName": "race_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "distance",
+            "columnName": "distance",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "start",
+            "columnName": "start",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "end",
+            "columnName": "end",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "history_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_History_user_id",
+            "unique": false,
+            "columnNames": [
+              "user_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_History_user_id` ON `${TABLE_NAME}` (`user_id`)"
+          },
+          {
+            "name": "index_History_race_id",
+            "unique": false,
+            "columnNames": [
+              "race_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_History_race_id` ON `${TABLE_NAME}` (`race_id`)"
+          },
+          {
+            "name": "index_History_distance",
+            "unique": false,
+            "columnNames": [
+              "distance"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_History_distance` ON `${TABLE_NAME}` (`distance`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Race",
+            "onDelete": "SET NULL",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "race_id"
+            ],
+            "referencedColumns": [
+              "race_id"
+            ]
+          },
+          {
+            "table": "User",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "user_id"
+            ],
+            "referencedColumns": [
+              "user_id"
+            ]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c34f9b184014308c8983f99a4cb2586f')"
+    ]
+  }
+}
