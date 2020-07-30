@@ -1,5 +1,8 @@
 package edu.cnm.deepdive.myfunrun.service;
 
+import static com.facebook.stetho.BuildConfig.*;
+import static edu.cnm.deepdive.myfunrun.BuildConfig.CLIENT_ID;
+
 import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
@@ -12,7 +15,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
-import edu.cnm.deepdive.myfunrun.BuildConfig;
+
 
 /**
  * The type Google sign in service.
@@ -33,7 +36,7 @@ public class GoogleSignInService {
         .requestEmail()
         .requestId()
         .requestProfile()
-        .requestIdToken(BuildConfig.CLIENT_ID)
+        .requestIdToken(CLIENT_ID)
         .build();
     client = GoogleSignIn.getClient(context, options);
   }
