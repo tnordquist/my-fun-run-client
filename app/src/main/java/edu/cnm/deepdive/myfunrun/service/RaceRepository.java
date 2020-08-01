@@ -10,16 +10,22 @@ import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * The type Race repository.
  */
 public class RaceRepository {
 
+  private static final int NETWORK_POOL_SIZE = 4;
+  private static final String AUTH_HEADER_FORMAT = "Bearer %s";
 
   private final Context context;
   private final MyFunRunDatabase database;
   private final RaceDao raceDao;
+  private final BackendService backendService;
+  private final ExecutorService networkPool;
 
   /**
    * Instantiates a new Race repository.
@@ -30,6 +36,8 @@ public class RaceRepository {
     this.context = context;
     database = MyFunRunDatabase.getInstance();
     raceDao = database.getRaceDao();
+    backendService = BackendService.getInstance();
+    networkPool = Executors.newFixedThreadPool(NETWORK_POOL_SIZE);
   }
 
   /**
@@ -38,9 +46,17 @@ public class RaceRepository {
    * @return the all
    */
   public LiveData<List<Race>> getAll() {
+
     return raceDao.selectAll();
   }
 
+  public Completable refresh(String idToken) {
+    return backendService.getRaces(idToken)
+        .subscribeOn(Schedulers.from(networkPool))
+        .flatMap((races) -> raceDao.insert(races))
+        .subscribeOn(Schedulers.io())
+        .flatMapCompletable((ids) -> Completable.complete());
+  }
   /**
    * Get single.
    *
@@ -58,14 +74,20 @@ public class RaceRepository {
    * @param race the race
    * @return the completable
    */
-  public Completable save(Race race) {
-    if (race.getId() == 0) {
-      return Completable.fromSingle(raceDao.insert(race))
-          .subscribeOn(Schedulers.io());
-    } else {
-      return Completable.fromSingle(raceDao.update(race))
-          .subscribeOn(Schedulers.io());
-    }
+  public Completable save(String idToken, Race race) {
+    Single<?> localTask = (race.getId() == 0) ? raceDao.insert(race) : raceDao.update(race);
+    Single<Race> remoteTask = (race.getId() == 0)
+        ? backendService.postRace(getHeader(idToken), race)
+            .map((r) -> {
+              race.setId(r.getId());
+              return race;
+            })
+        : backendService.updateRace(getHeader(idToken), race.getId(), race);
+    return remoteTask
+        .subscribeOn(Schedulers.from(networkPool))
+        .flatMap((s) -> localTask)
+        .subscribeOn(Schedulers.io())
+        .flatMapCompletable((ignore)-> Completable.complete());
   }
 
   /**
@@ -82,5 +104,9 @@ public class RaceRepository {
       return Completable.fromSingle(raceDao.delete(race))
           .subscribeOn(Schedulers.io());
     }
+  }
+
+  private String getHeader(String idToken) {
+    return String.format(AUTH_HEADER_FORMAT, idToken);
   }
 }

@@ -9,9 +9,11 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
+import edu.cnm.deepdive.myfunrun.model.dao.CommentDao;
 import edu.cnm.deepdive.myfunrun.model.dao.HistoryDao;
 import edu.cnm.deepdive.myfunrun.model.dao.UserDao;
 import edu.cnm.deepdive.myfunrun.model.dao.RaceDao;
+import edu.cnm.deepdive.myfunrun.model.entity.Comment;
 import edu.cnm.deepdive.myfunrun.model.entity.History;
 import edu.cnm.deepdive.myfunrun.model.entity.Race;
 import edu.cnm.deepdive.myfunrun.model.entity.User;
@@ -23,8 +25,8 @@ import java.util.Date;
  * The type My fun run database.
  */
 @Database(
-    entities = {Race.class, User.class, History.class},
-    version = 1,
+    entities = {Race.class, User.class, History.class, Comment.class},
+    version = 2,
     exportSchema = true
 )
 @TypeConverters({Converters.class})
@@ -63,6 +65,8 @@ public abstract class MyFunRunDatabase extends RoomDatabase {
    * @return the history dao
    */
   public abstract HistoryDao getHistoryDao();
+
+  public abstract CommentDao getCommentDao();
 
   /**
    * Gets instance.
