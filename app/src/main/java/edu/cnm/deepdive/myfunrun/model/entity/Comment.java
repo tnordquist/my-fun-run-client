@@ -6,7 +6,7 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 import java.util.Date;
 
-// TODO Don't forget to reconsruct DDL
+// TODO Don't forget to reconstruct DDL
 @Entity(
     foreignKeys = {
         @ForeignKey(
