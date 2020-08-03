@@ -6,6 +6,7 @@ import static edu.cnm.deepdive.myfunrun.BuildConfig.CLIENT_ID;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
+import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import com.facebook.stetho.BuildConfig;
@@ -128,6 +129,9 @@ public class GoogleSignInService {
   }
 
   private void update(GoogleSignInAccount account) {
+    if (account != null) {
+      Log.d(getClass().getName(), account.getIdToken());
+    }
     this.account.setValue(account);
     this.throwable.setValue(null);
   }
