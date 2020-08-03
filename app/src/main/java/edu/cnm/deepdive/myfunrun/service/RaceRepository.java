@@ -96,14 +96,16 @@ public class RaceRepository {
    * @param race the race
    * @return the completable
    */
-  public Completable delete(Race race) {
-    if (race.getId() == 0) {
-      return Completable.fromAction(() -> {})
-          .subscribeOn(Schedulers.io());
-    } else {
-      return Completable.fromSingle(raceDao.delete(race))
-          .subscribeOn(Schedulers.io());
-    }
+  public Completable delete(String idToken, Race race) {
+    Single<?> localTask = (race.getId() == 0) ? Single.just(null) : raceDao.delete(race);
+    Completable remoteTask = (race.getId() == 0)
+        ? Completable.complete()
+        : backendService.deleteRace(getHeader(idToken), race.getId());
+    return remoteTask
+        .subscribeOn(Schedulers.from(networkPool))
+        .andThen(localTask)
+        .subscribeOn(Schedulers.io())
+        .flatMapCompletable((ignore)-> Completable.complete());
   }
 
   private String getHeader(String idToken) {
