@@ -125,7 +125,7 @@ public class GoogleSignInService {
    */
   public Task<Void> signOut() {
     return client.signOut()
-        .addOnCompleteListener((ignored) -> update((GoogleSignInAccount) null));
+        .addOnCompleteListener((account) -> update((GoogleSignInAccount) null));
   }
 
   private void update(GoogleSignInAccount account) {
