@@ -1,0 +1,33 @@
+Index: app/src/main/java/edu/cnm/deepdive/myfunrun/controller/NavigationActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package edu.cnm.deepdive.myfunrun.controller;\n\nimport android.os.Bundle;\nimport com.google.android.material.bottomnavigation.BottomNavigationView;\nimport androidx.appcompat.app.AppCompatActivity;\nimport androidx.navigation.NavController;\nimport androidx.navigation.Navigation;\nimport androidx.navigation.ui.AppBarConfiguration;\nimport androidx.navigation.ui.NavigationUI;\nimport edu.cnm.deepdive.myfunrun.R;\n\n/**\n * This class controls the navigation of the toolbar.\n */\npublic class NavigationActivity extends AppCompatActivity {\n\n  @Override\n  protected void onCreate(Bundle savedInstanceState) {\n    super.onCreate(savedInstanceState);\n    setContentView(R.layout.activity_navigation);\n    BottomNavigationView navView = findViewById(R.id.nav_view);\n    // Passing each menu ID as a set of Ids because each\n    // menu should be considered as top level destinations.\n    AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(\n        R.id.navigation_home, R.id.navigation_races, R.id.navigation_history)\n        .build();\n    NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);\n    NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);\n    NavigationUI.setupWithNavController(navView, navController);\n  }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/edu/cnm/deepdive/myfunrun/controller/NavigationActivity.java	(revision aad7021ac9cc5cbd67b22ef3a9b6b236736a11ee)
++++ app/src/main/java/edu/cnm/deepdive/myfunrun/controller/NavigationActivity.java	(date 1596655065728)
+@@ -8,6 +8,7 @@
+ import androidx.navigation.ui.AppBarConfiguration;
+ import androidx.navigation.ui.NavigationUI;
+ import edu.cnm.deepdive.myfunrun.R;
++import edu.cnm.deepdive.myfunrun.service.GoogleSignInService;
+ 
+ /**
+  * This class controls the navigation of the toolbar.
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"GradleSettings\">\n    <option name=\"linkedExternalProjectsSettings\">\n      <GradleProjectSettings>\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"modules\">\n          <set>\n            <option value=\"$PROJECT_DIR$\" />\n            <option value=\"$PROJECT_DIR$/app\" />\n          </set>\n        </option>\n        <option name=\"useQualifiedModuleNames\" value=\"true\" />\n      </GradleProjectSettings>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/gradle.xml	(revision aad7021ac9cc5cbd67b22ef3a9b6b236736a11ee)
++++ .idea/gradle.xml	(date 1596655065734)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
