@@ -27,20 +27,6 @@ public class HistoryFragment extends Fragment implements OnClickListener{
   private RecyclerView historyList;
   private FloatingActionButton addHistory;
 
-
-
-  @Override
-  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-    super.onViewCreated(view, savedInstanceState);
-    historyViewModel = new ViewModelProvider(this).get(HistoryViewModel.class);
-    getLifecycle().addObserver(historyViewModel);
-    historyViewModel.getHistories().observe(getViewLifecycleOwner(), (histories) -> {
-      HistoryAdapter adapter = new HistoryAdapter(getContext(), histories, (OnClickListener) this);
-      historyList.setAdapter(adapter);
-
-    });
-  }
-
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container, Bundle savedInstanceState) {
     View root = inflater.inflate(R.layout.fragment_history, container, false);
@@ -50,13 +36,25 @@ public class HistoryFragment extends Fragment implements OnClickListener{
     return root;
   }
 
+  @Override
+  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    super.onViewCreated(view, savedInstanceState);
+    historyViewModel = new ViewModelProvider(this).get(HistoryViewModel.class);
+    getLifecycle().addObserver(historyViewModel);
+    historyViewModel.getHistories().observe(getViewLifecycleOwner(), (histories) -> {
+      HistoryAdapter adapter = new HistoryAdapter(getContext(), histories,this);
+      historyList.setAdapter(adapter);
+
+    });
+  }
 
   @Override
   public void onClick(View view, int position, History history) {
     editHistory(history.getId());
   }
+
   private void editHistory(long id) {
-    RaceEditFragment fragment = RaceEditFragment.newInstance(id);
+    HistoryEditFragment fragment = HistoryEditFragment.newInstance(id);
     fragment.show(getChildFragmentManager(), fragment.getClass().getName());
   }
 }

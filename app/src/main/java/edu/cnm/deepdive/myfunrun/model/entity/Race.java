@@ -1,6 +1,7 @@
 package edu.cnm.deepdive.myfunrun.model.entity;
 
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Index;
@@ -56,5 +57,11 @@ public class Race {
    */
   public void setName(String name) {
     this.name = name;
+  }
+
+  @NonNull
+  @Override
+  public String toString() {
+    return name;
   }
 }
