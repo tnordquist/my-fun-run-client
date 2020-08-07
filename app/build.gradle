@@ -1,9 +1,12 @@
 apply plugin: 'com.android.application'
 apply plugin: 'androidx.navigation.safeargs'
 
-def getLocalProperties(String propertyName) {
+def getLocalProperty(propertyName) {
     Properties properties = new Properties()
-    properties.load(project.rootProject.file("local.properties").newDataInputStream())
+    File file = project.rootProject.file("local.properties")
+    if (file.exists()) {
+        properties.load(project.rootProject.file(file).newDataInputStream())
+    }
     return properties.getProperty(propertyName)
 }
 
@@ -22,7 +25,7 @@ android {
         versionName "1.0"
 
         buildConfigField "String", "CLIENT_ID", quoted("314239205062-0fbd7e2dd75u3vvon4h06he90c4ict1b.apps.googleusercontent.com")
-        buildConfigField "String", "BASE_URL", quoted(getLocalProperties("base_url"))
+        buildConfigField "String", "BASE_URL", quoted(getLocalProperty("base_url") ?: "http://10.0.2.2:8080/")
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {

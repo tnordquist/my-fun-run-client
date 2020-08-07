@@ -39,7 +39,7 @@ public class RaceFragment extends Fragment implements OnClickListener {
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
-    raceViewModel = new ViewModelProvider(this).get(RaceViewModel.class);
+    raceViewModel = new ViewModelProvider(getActivity()).get(RaceViewModel.class);
     getLifecycle().addObserver(raceViewModel);
     raceViewModel.getRaces().observe(getViewLifecycleOwner(), (races) -> {
       RaceAdapter adapter = new RaceAdapter(getContext(), races, this);

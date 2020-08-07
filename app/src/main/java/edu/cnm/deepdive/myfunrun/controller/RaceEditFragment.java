@@ -87,7 +87,7 @@ public class RaceEditFragment extends DialogFragment implements TextWatcher {
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
-    raceViewModel = new ViewModelProvider(this).get(RaceViewModel.class);
+    raceViewModel = new ViewModelProvider(getActivity()).get(RaceViewModel.class);
     if (id > 0) {
       raceViewModel.getRace().observe(getViewLifecycleOwner(), (race) -> {
         this.race = race;

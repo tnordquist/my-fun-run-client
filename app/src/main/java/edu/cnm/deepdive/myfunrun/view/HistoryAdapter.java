@@ -88,7 +88,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<Holder> {
       end = itemView.findViewById(R.id.end);
       distance = itemView.findViewById(R.id.distance);
       pace = itemView.findViewById(R.id.pace);
-      race = itemView.findViewById(R.id.race);
+      race = itemView.findViewById(R.id.race_spinner);
     }
 
     private void bind(int position) {
